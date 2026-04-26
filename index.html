@@ -470,9 +470,36 @@
       box-shadow:0 8px 24px rgba(13,28,52,.05);
     }
 
-    .summary-box strong,
-    .confirmation-box strong{
-      color:#173761;
+    .summary-box-premium{
+      padding:22px;
+      border-radius:22px;
+      border:1px solid rgba(207,164,74,.30);
+      background:linear-gradient(180deg, #fffefb 0%, #fffaf1 100%);
+      box-shadow:0 10px 26px rgba(16,40,74,.05);
+    }
+
+    .summary-box-premium .summary-row{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:10px 18px;
+      padding:9px 0;
+      border-bottom:1px solid rgba(207,164,74,.14);
+    }
+
+    .summary-box-premium .summary-row:last-child{
+      border-bottom:none;
+    }
+
+    .summary-box-premium .summary-label{
+      font-weight:800;
+      color:#193a67;
+      line-height:1.5;
+    }
+
+    .summary-box-premium .summary-value{
+      color:#1d2740;
+      line-height:1.6;
+      word-break:break-word;
     }
 
     .payment-method-box{
@@ -497,6 +524,10 @@
       line-height:1.7;
     }
 
+    .payment-method-box-premium{
+      margin-top:20px;
+    }
+
     .meta-list{
       display:grid;
       gap:10px;
@@ -513,6 +544,15 @@
       line-height:1.55;
     }
 
+    .form-wrap-premium{
+      margin-top:20px;
+      padding:24px;
+      border-radius:24px;
+      border:1px solid rgba(207,164,74,.22);
+      background:linear-gradient(180deg,#fffefb 0%, #fffaf3 100%);
+      box-shadow:0 10px 24px rgba(16,40,74,.05);
+    }
+
     .checkbox-row{
       display:flex;
       gap:12px;
@@ -522,6 +562,14 @@
       border-radius:16px;
       border:1px solid #dde6f1;
       background:#fafcff;
+    }
+
+    .checkbox-row-premium{
+      margin-top:18px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid #e3e8f1;
+      background:#ffffff;
     }
 
     .checkbox-row input[type="checkbox"]{
@@ -537,6 +585,12 @@
       font-size:14px;
       color:#21446e;
       line-height:1.65;
+      font-weight:700;
+    }
+
+    .checkbox-row-premium label{
+      font-size:15px;
+      line-height:1.7;
       font-weight:700;
     }
 
@@ -645,13 +699,30 @@
       .card-top{padding:24px 20px}
       .actions{flex-direction:column}
       button,.button-link{width:100%}
+
+      .summary-box-premium .summary-row{
+        grid-template-columns:1fr;
+        gap:4px;
+        padding:10px 0;
+      }
+
+      .summary-box-premium .summary-label{
+        font-size:14px;
+      }
+
+      .summary-box-premium .summary-value{
+        font-size:15px;
+      }
+
+      .form-wrap-premium{
+        padding:18px;
+      }
     }
   </style>
 </head>
 <body>
   <iframe name="hidden_iframe_step2"></iframe>
   <iframe name="hidden_iframe_step3"></iframe>
-  <iframe name="hidden_iframe_final"></iframe>
 
   <div class="page-wrap">
     <section class="hero">
@@ -680,8 +751,8 @@
             <div class="step-row">
               <span class="step-chip">1. Benefits</span>
               <span class="step-chip">2. Personal Information</span>
-              <span class="step-chip">3. Payment Confirmation</span>
-              <span class="step-chip">4. Final Review</span>
+              <span class="step-chip">3. Payment</span>
+              <span class="step-chip">4. Payment Confirmation</span>
             </div>
           </div>
 
@@ -865,14 +936,14 @@
               <div class="section-header">
                 <h3 class="section-title">Payment</h3>
                 <p class="section-copy">
-                  Use the selected payment method below. When funds have been sent, click the confirmation button.
-                  That confirmation step will send the payment status to email before moving ahead.
+                  Review your enrollment summary and complete payment using your selected method below.
+                  Once done, continue to the payment confirmation page.
                 </p>
               </div>
 
-              <div class="summary-box" id="paymentSummary"></div>
+              <div class="summary-box summary-box-premium" id="paymentSummary"></div>
 
-              <div class="payment-method-box" id="cashAppBox">
+              <div class="payment-method-box payment-method-box-premium" id="cashAppBox">
                 <h4>Cash App</h4>
                 <p>Use the official organization payment link or tag below to complete your contribution.</p>
                 <div class="meta-list">
@@ -884,7 +955,7 @@
                 </div>
               </div>
 
-              <div class="payment-method-box" id="zelleBox">
+              <div class="payment-method-box payment-method-box-premium" id="zelleBox">
                 <h4>Zelle</h4>
                 <p>Send your contribution to the official organization Zelle destination listed below.</p>
                 <div class="meta-list">
@@ -893,7 +964,7 @@
                 </div>
               </div>
 
-              <div class="payment-method-box" id="applePayBox">
+              <div class="payment-method-box payment-method-box-premium" id="applePayBox">
                 <h4>Apple Pay</h4>
                 <p>Use the approved Apple Pay destination if your organization has one enabled.</p>
                 <div class="meta-list">
@@ -901,6 +972,23 @@
                   <div class="meta-item">Apple Pay Link: <strong>Add official Apple Pay link if available</strong></div>
                 </div>
               </div>
+
+              <div class="actions">
+                <button type="button" class="btn-soft" onclick="showScreen(2)">Back</button>
+                <button type="button" class="btn-gold" onclick="goToFinalConfirmation()">Continue to Payment Confirmation</button>
+              </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="screen" id="screen-4">
+              <div class="section-header">
+                <h3 class="section-title">Payment Confirmation</h3>
+                <p class="section-copy">
+                  Enter your payment confirmation details below. This final step will send the payment confirmation record to email.
+                </p>
+              </div>
+
+              <div class="confirmation-box summary-box-premium" id="finalSummary"></div>
 
               <form
                 id="paymentConfirmForm"
@@ -927,7 +1015,7 @@
                 <input type="hidden" name="additional_notes" id="pc_notes">
                 <input type="hidden" name="payment_status" value="Member confirmed funds were sent">
 
-                <div class="form-wrap">
+                <div class="form-wrap form-wrap-premium">
                   <div class="form-grid">
                     <div class="field">
                       <label for="transactionRef">Transaction Reference / Last 4 Digits</label>
@@ -951,7 +1039,7 @@
                     </div>
                   </div>
 
-                  <div class="checkbox-row">
+                  <div class="checkbox-row checkbox-row-premium">
                     <input type="checkbox" id="sentFundsCheck">
                     <label for="sentFundsCheck">
                       I confirm that I have sent the funds using the selected official payment method.
@@ -962,69 +1050,10 @@
                 <div id="step3Status" class="status"></div>
 
                 <div class="actions">
-                  <button type="button" class="btn-soft" onclick="showScreen(2)">Back</button>
+                  <button type="button" class="btn-soft" onclick="showScreen(3)">Back</button>
                   <button type="button" class="btn-gold" onclick="submitFundsConfirmation()">I’ve Sent Funds</button>
                 </div>
               </form>
-            </div>
-
-            <!-- STEP 4 -->
-            <div class="screen" id="screen-4">
-              <div class="section-header">
-                <h3 class="section-title">Final Review</h3>
-                <p class="section-copy">
-                  Review the enrollment summary below and submit the final record if you want an additional final email entry.
-                </p>
-              </div>
-
-              <div class="confirmation-box" id="finalSummary"></div>
-
-              <form
-                id="finalForm"
-                action="https://formsubmit.co/YOUR_FORMSUBMIT_EMAIL@example.com"
-                method="POST"
-                target="hidden_iframe_final"
-              >
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_subject" value="Golden Eagles Program - Final Review Submission">
-                <input type="hidden" name="submission_type" value="final_review_submission">
-
-                <input type="hidden" name="full_name" id="ff_full_name">
-                <input type="hidden" name="email" id="ff_email">
-                <input type="hidden" name="phone_number" id="ff_phone">
-                <input type="hidden" name="membership_or_pilot_id" id="ff_memberId">
-                <input type="hidden" name="mailing_address" id="ff_address">
-                <input type="hidden" name="city" id="ff_city">
-                <input type="hidden" name="state" id="ff_state">
-                <input type="hidden" name="zip_code" id="ff_zip">
-                <input type="hidden" name="country" id="ff_country">
-                <input type="hidden" name="contribution_amount" id="ff_amount">
-                <input type="hidden" name="preferred_payment_method" id="ff_payment_method">
-                <input type="hidden" name="additional_notes" id="ff_notes">
-                <input type="hidden" name="transaction_reference" id="ff_transactionRef">
-                <input type="hidden" name="payment_date_sent" id="ff_paymentDate">
-                <input type="hidden" name="payment_note" id="ff_paymentNote">
-                <input type="hidden" name="payment_status" value="Final review submitted">
-
-                <div class="checkbox-row">
-                  <input type="checkbox" id="finalAgree" required>
-                  <label for="finalAgree">
-                    I confirm that the information entered is accurate and that funds were sent to an official organization payment destination.
-                  </label>
-                </div>
-
-                <div id="finalStatus" class="status"></div>
-
-                <div class="actions">
-                  <button type="button" class="btn-soft" onclick="showScreen(3)">Back</button>
-                  <button type="submit" class="btn-gold">Submit Final Review</button>
-                </div>
-              </form>
-
-              <div class="notice">
-                This final step is optional if you only want the first two email actions. Leave it in place if you want a third final email record as well.
-              </div>
             </div>
           </div>
         </div>
@@ -1048,7 +1077,7 @@
           <ul>
             <li>Replace the FormSubmit email with the correct destination</li>
             <li>Replace all placeholder payment destinations with official organization-owned accounts only</li>
-            <li>Test the three email steps with a real inbox</li>
+            <li>Test the two email steps with a real inbox</li>
             <li>Consider adding your organization logo in the top area</li>
           </ul>
         </div>
@@ -1129,52 +1158,65 @@
       document.getElementById('pc_notes').value = data.notes;
     }
 
-    function fillFinalHiddenFields(){
-      const data = getPersonalData();
-      document.getElementById('ff_full_name').value = data.fullName;
-      document.getElementById('ff_email').value = data.email;
-      document.getElementById('ff_phone').value = data.phone;
-      document.getElementById('ff_memberId').value = data.memberId;
-      document.getElementById('ff_address').value = data.address;
-      document.getElementById('ff_city').value = data.city;
-      document.getElementById('ff_state').value = data.state;
-      document.getElementById('ff_zip').value = data.zip;
-      document.getElementById('ff_country').value = data.country;
-      document.getElementById('ff_amount').value = data.amount;
-      document.getElementById('ff_payment_method').value = data.paymentMethod;
-      document.getElementById('ff_notes').value = data.notes;
-      document.getElementById('ff_transactionRef').value = document.getElementById('transactionRef').value.trim();
-      document.getElementById('ff_paymentDate').value = document.getElementById('paymentDate').value;
-      document.getElementById('ff_paymentNote').value = document.getElementById('paymentNote').value.trim();
-    }
-
     function updatePaymentSummary(){
       const data = getPersonalData();
 
       document.getElementById('paymentSummary').innerHTML = `
-        <strong>Participant:</strong> ${escapeHtml(data.fullName)}<br>
-        <strong>Email:</strong> ${escapeHtml(data.email)}<br>
-        <strong>Phone:</strong> ${escapeHtml(data.phone)}<br>
-        <strong>Mailing Address:</strong> ${escapeHtml(data.address)}, ${escapeHtml(data.city)}, ${escapeHtml(data.state)} ${escapeHtml(data.zip)}, ${escapeHtml(data.country)}<br>
-        <strong>Contribution Amount:</strong> $${escapeHtml(data.amount)}<br>
-        <strong>Selected Payment Method:</strong> ${escapeHtml(data.paymentMethod)}
+        <div class="summary-row">
+          <div class="summary-label">Participant</div>
+          <div class="summary-value">${escapeHtml(data.fullName)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Email</div>
+          <div class="summary-value">${escapeHtml(data.email)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Phone</div>
+          <div class="summary-value">${escapeHtml(data.phone)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Mailing Address</div>
+          <div class="summary-value">${escapeHtml(data.address)}, ${escapeHtml(data.city)}, ${escapeHtml(data.state)} ${escapeHtml(data.zip)}, ${escapeHtml(data.country)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Contribution Amount</div>
+          <div class="summary-value">$${escapeHtml(data.amount)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Selected Payment Method</div>
+          <div class="summary-value">${escapeHtml(data.paymentMethod)}</div>
+        </div>
       `;
     }
 
     function updateFinalSummary(){
       const data = getPersonalData();
-      const transactionRef = document.getElementById('transactionRef').value.trim();
-      const paymentDate = document.getElementById('paymentDate').value;
-      const paymentNote = document.getElementById('paymentNote').value.trim();
 
       document.getElementById('finalSummary').innerHTML = `
-        <strong>Name:</strong> ${escapeHtml(data.fullName)}<br>
-        <strong>Email:</strong> ${escapeHtml(data.email)}<br>
-        <strong>Contribution Amount:</strong> $${escapeHtml(data.amount)}<br>
-        <strong>Payment Method:</strong> ${escapeHtml(data.paymentMethod)}<br>
-        <strong>Transaction Reference:</strong> ${escapeHtml(transactionRef || 'Not provided')}<br>
-        <strong>Payment Date:</strong> ${escapeHtml(paymentDate || 'Not provided')}<br>
-        <strong>Payment Note:</strong> ${escapeHtml(paymentNote || 'Not provided')}
+        <div class="summary-row">
+          <div class="summary-label">Participant</div>
+          <div class="summary-value">${escapeHtml(data.fullName)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Email</div>
+          <div class="summary-value">${escapeHtml(data.email)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Phone</div>
+          <div class="summary-value">${escapeHtml(data.phone)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Mailing Address</div>
+          <div class="summary-value">${escapeHtml(data.address)}, ${escapeHtml(data.city)}, ${escapeHtml(data.state)} ${escapeHtml(data.zip)}, ${escapeHtml(data.country)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Contribution Amount</div>
+          <div class="summary-value">$${escapeHtml(data.amount)}</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">Selected Payment Method</div>
+          <div class="summary-value">${escapeHtml(data.paymentMethod)}</div>
+        </div>
       `;
     }
 
@@ -1200,6 +1242,12 @@
       }, 900);
     }
 
+    function goToFinalConfirmation(){
+      fillStep3HiddenFields();
+      updateFinalSummary();
+      showScreen(4);
+    }
+
     function submitFundsConfirmation(){
       if(!document.getElementById('sentFundsCheck').checked){
         setStatus('step3Status', 'error', 'Please confirm that you have sent the funds before continuing.');
@@ -1212,17 +1260,9 @@
       paymentForm.submit();
 
       setTimeout(() => {
-        fillFinalHiddenFields();
-        updateFinalSummary();
-        showScreen(4);
         setStatus('step3Status', 'success', 'Payment confirmation submitted successfully.');
       }, 900);
     }
-
-    document.getElementById('finalForm').addEventListener('submit', function(){
-      fillFinalHiddenFields();
-      setStatus('finalStatus', 'success', 'Submitting final review...');
-    });
   </script>
 </body>
 </html>
