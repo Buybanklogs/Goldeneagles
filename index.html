@@ -6,38 +6,52 @@
   <title>Golden Eagles Member Relief & Return Program</title>
   <style>
     :root{
-      --bg:#0c1424;
-      --bg-soft:#111c31;
-      --card:#ffffff;
-      --text:#101826;
-      --muted:#60708a;
-      --line:#d9e2f0;
-      --gold:#d7b56d;
-      --gold-deep:#b88a2f;
-      --blue:#163e72;
-      --blue-2:#1f5ea8;
-      --blue-3:#eaf2fb;
-      --success:#11865b;
+      --navy-1:#07111f;
+      --navy-2:#0c1830;
+      --navy-3:#13284a;
+      --navy-4:#1a3762;
+
+      --gold-1:#f7e7b8;
+      --gold-2:#e6c97a;
+      --gold-3:#cfa44a;
+      --gold-4:#b88528;
+      --gold-5:#8d6317;
+
+      --white:#ffffff;
+      --off:#f7f8fb;
+      --ink:#102038;
+      --muted:#62728c;
+      --line:#dbe3ef;
+      --line-gold:rgba(207,164,74,.42);
+
+      --success:#1e7a53;
       --danger:#b42318;
-      --shadow:0 18px 45px rgba(0,0,0,.18);
-      --radius:24px;
+
+      --radius-xl:28px;
+      --radius-lg:20px;
+      --radius-md:14px;
+
+      --shadow-deep:0 30px 80px rgba(0,0,0,.28);
+      --shadow-soft:0 18px 45px rgba(8,18,35,.12);
+      --shadow-gold:0 12px 30px rgba(184,133,40,.25);
     }
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(215,181,109,.14), transparent 24%),
-        linear-gradient(180deg, #0b1220 0%, #10203a 58%, #0d1728 100%);
-      color:#fff;
       min-height:100vh;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color:#fff;
+      background:
+        radial-gradient(circle at top left, rgba(230,201,122,.12), transparent 24%),
+        radial-gradient(circle at right center, rgba(207,164,74,.10), transparent 22%),
+        linear-gradient(180deg, #06101d 0%, #0b1730 52%, #0a1324 100%);
     }
 
-    .shell{
-      width:min(1120px, calc(100% - 32px));
+    .page-wrap{
+      width:min(1200px, calc(100% - 28px));
       margin:0 auto;
-      padding:40px 0 70px;
+      padding:34px 0 70px;
     }
 
     .hero{
@@ -45,744 +59,1006 @@
       margin-bottom:28px;
     }
 
-    .eyebrow{
-      display:inline-block;
-      padding:8px 14px;
-      border:1px solid rgba(215,181,109,.45);
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 18px;
+      border:1px solid rgba(230,201,122,.45);
       border-radius:999px;
-      color:#f4dfaa;
-      background:rgba(255,255,255,.04);
-      font-size:13px;
+      color:var(--gold-1);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
       letter-spacing:.14em;
       text-transform:uppercase;
-      margin-bottom:16px;
+      font-size:12px;
+      font-weight:700;
     }
 
     .hero h1{
-      margin:0;
+      margin:18px auto 12px;
+      max-width:900px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size:clamp(32px, 6vw, 56px);
-      line-height:1.08;
+      font-size:clamp(32px, 5vw, 58px);
+      line-height:1.06;
       letter-spacing:-.03em;
+      color:#fff8ea;
+      text-shadow:0 2px 10px rgba(0,0,0,.18);
     }
 
     .hero p{
-      width:min(780px, 100%);
-      margin:16px auto 0;
-      color:#d2dbea;
+      max-width:820px;
+      margin:0 auto;
+      color:#d7dfec;
       font-size:17px;
-      line-height:1.7;
+      line-height:1.72;
     }
 
     .layout{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:28px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(290px, .92fr);
+      gap:26px;
       align-items:start;
     }
 
-    .panel{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      overflow:hidden;
+    .main-shell{
+      padding:16px;
+      border-radius:32px;
+      background:
+        linear-gradient(135deg, rgba(230,201,122,.18), rgba(255,255,255,.04)),
+        rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:var(--shadow-deep);
+      backdrop-filter: blur(12px);
     }
 
-    .card-wrap{
-      padding:18px;
-    }
-
-    .card{
-      background:var(--card);
-      color:var(--text);
-      border-radius:24px;
+    .premium-card{
+      background:linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+      border-radius:26px;
       overflow:hidden;
-      min-height:760px;
-      position:relative;
+      color:var(--ink);
+      min-height:780px;
+      box-shadow:var(--shadow-soft);
+      border:1px solid rgba(230,201,122,.22);
     }
 
     .card-top{
-      background:
-        linear-gradient(135deg, rgba(22,62,114,1), rgba(18,95,174,1)),
-        linear-gradient(135deg, #163e72, #1f5ea8);
-      color:#fff;
-      padding:28px 28px 24px;
       position:relative;
+      padding:32px 30px 26px;
+      background:
+        linear-gradient(135deg, rgba(191,145,49,.18), rgba(255,255,255,0) 35%),
+        linear-gradient(135deg, #10284b 0%, #18345f 52%, #0f2240 100%);
+      color:#fff;
+      border-bottom:1px solid rgba(230,201,122,.26);
     }
 
-    .badge{
+    .card-top:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at top right, rgba(247,231,184,.14), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,.04), transparent 35%);
+    }
+
+    .top-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+
+    .gold-pill{
+      position:relative;
+      z-index:1;
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border:1px solid rgba(255,255,255,.18);
+      min-height:38px;
+      padding:0 14px;
       border-radius:999px;
-      background:rgba(255,255,255,.08);
+      border:1px solid rgba(230,201,122,.45);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      color:#ffefc4;
       font-size:12px;
+      font-weight:700;
       letter-spacing:.1em;
       text-transform:uppercase;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
     }
 
     .card-top h2{
-      margin:16px 0 10px;
+      position:relative;
+      z-index:1;
+      margin:0 0 10px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size:clamp(24px, 4vw, 38px);
-      line-height:1.15;
+      font-size:clamp(28px, 4vw, 40px);
+      line-height:1.08;
+      letter-spacing:-.025em;
+      color:#fff7e4;
     }
 
     .card-top p{
+      position:relative;
+      z-index:1;
       margin:0;
-      color:#dce8f7;
-      line-height:1.7;
+      max-width:760px;
+      color:#dce6f5;
       font-size:15px;
+      line-height:1.72;
     }
 
-    .steps{
+    .step-row{
+      position:relative;
+      z-index:1;
       display:flex;
       gap:8px;
       flex-wrap:wrap;
       margin-top:18px;
     }
 
-    .step-pill{
-      padding:8px 12px;
+    .step-chip{
+      min-height:36px;
+      padding:0 12px;
+      display:inline-flex;
+      align-items:center;
       border-radius:999px;
-      font-size:12px;
-      border:1px solid rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.07);
+      color:#eef4fd;
+      font-size:12px;
+      font-weight:600;
     }
 
     .card-body{
-      padding:26px;
+      padding:28px;
     }
 
     .screen{display:none}
     .screen.active{display:block}
 
+    .section-header{
+      margin-bottom:18px;
+    }
+
     .section-title{
       margin:0 0 8px;
-      font-size:24px;
       font-family: Georgia, "Times New Roman", serif;
-      color:#12243e;
+      font-size:29px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+      color:#122a4d;
     }
 
     .section-copy{
-      margin:0 0 20px;
+      margin:0;
       color:var(--muted);
-      line-height:1.7;
       font-size:15px;
+      line-height:1.75;
+    }
+
+    .enrollment-banner{
+      margin:20px 0 18px;
+      padding:18px 20px;
+      border-radius:20px;
+      border:1px solid var(--line-gold);
+      background:linear-gradient(180deg, #fffaf0, #ffffff);
+      box-shadow:var(--shadow-gold);
+    }
+
+    .enrollment-banner .mini{
+      color:var(--gold-5);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .enrollment-banner .price{
+      margin-top:6px;
+      font-size:40px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      color:#11284a;
     }
 
     .benefit-grid{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:14px;
-      margin-bottom:22px;
+      margin:18px 0 20px;
     }
 
-    .benefit{
-      border:1px solid var(--line);
+    .benefit-box{
+      padding:18px;
       border-radius:18px;
-      padding:16px;
-      background:#fbfdff;
+      border:1px solid var(--line-gold);
+      background:linear-gradient(180deg, #ffffff, #fcf8ef);
+      box-shadow:0 8px 20px rgba(16,40,74,.05);
     }
 
-    .benefit h4{
+    .benefit-box h4{
       margin:0 0 8px;
       font-size:16px;
-      color:#14325d;
+      color:#173661;
+      font-weight:800;
     }
 
-    .benefit p{
+    .benefit-box p{
       margin:0;
       color:var(--muted);
       font-size:14px;
-      line-height:1.6;
+      line-height:1.65;
     }
 
-    .price-box{
-      border:1px solid #e5d6af;
-      background:linear-gradient(180deg, #fffaf0, #fff);
-      border-radius:20px;
+    .accepted-box{
       padding:18px;
-      margin-bottom:18px;
+      border-radius:18px;
+      border:1px solid #e4e9f2;
+      background:#fbfcff;
     }
 
-    .price-box .label{
-      color:#7d6428;
+    .accepted-label{
+      margin-bottom:12px;
       font-size:13px;
-      text-transform:uppercase;
+      font-weight:800;
       letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#6d7d95;
     }
 
-    .price-box .amount{
-      margin:8px 0 0;
-      font-size:38px;
-      font-weight:700;
-      color:#10284b;
-    }
-
-    .pay-methods{
+    .method-list{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin:12px 0 4px;
     }
 
-    .pm{
-      border:1px solid var(--line);
-      background:#fff;
-      color:#17345d;
-      padding:10px 14px;
+    .method-pill{
+      min-height:42px;
+      padding:0 14px;
+      display:inline-flex;
+      align-items:center;
       border-radius:999px;
+      border:1px solid var(--line-gold);
+      background:linear-gradient(180deg, #fffef8, #fff7e5);
+      color:#173761;
       font-size:14px;
-      font-weight:600;
+      font-weight:700;
     }
 
     .actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top:20px;
+      margin-top:22px;
     }
 
-    button,
-    .btn-link{
+    button,.button-link{
       appearance:none;
       border:none;
-      cursor:pointer;
       text-decoration:none;
+      cursor:pointer;
+      min-height:54px;
+      padding:0 20px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:52px;
-      padding:0 20px;
-      border-radius:14px;
-      font-weight:700;
+      border-radius:15px;
       font-size:15px;
-      transition:.2s ease;
+      font-weight:800;
+      transition:.18s ease;
     }
 
-    .btn-primary{
-      background:linear-gradient(135deg, var(--gold), var(--gold-deep));
-      color:#132033;
-      box-shadow:0 10px 20px rgba(184,138,47,.24);
+    .btn-gold{
+      color:#0f1f34;
+      background:linear-gradient(180deg, #f6dfa4, #d8af57 60%, #b9872c 100%);
+      box-shadow:0 10px 24px rgba(184,133,40,.3);
+      border:1px solid rgba(141,99,23,.28);
     }
 
-    .btn-primary:hover{transform:translateY(-1px)}
-    .btn-secondary{
-      background:#eff5fb;
-      color:#163e72;
-      border:1px solid #d3dfef;
+    .btn-gold:hover{transform:translateY(-1px)}
+
+    .btn-soft{
+      color:#14325d;
+      background:#eff4fb;
+      border:1px solid #d7e0ee;
     }
 
-    .btn-secondary:hover{background:#e8f0f9}
+    .btn-soft:hover{background:#e7eef8}
+
+    .form-wrap{
+      margin-top:18px;
+      padding:22px;
+      border-radius:22px;
+      border:1px solid rgba(207,164,74,.22);
+      background:linear-gradient(180deg,#fffdf8,#ffffff);
+    }
 
     .form-grid{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:14px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px 14px;
     }
 
-    .field{margin-bottom:2px}
-    .field.full{grid-column:1 / -1}
+    .field.full{grid-column:1/-1}
 
     label{
       display:block;
       margin:0 0 8px;
+      color:#18365f;
       font-size:14px;
-      font-weight:700;
-      color:#19375f;
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+
+    .input-shell{
+      position:relative;
     }
 
     input, select, textarea{
       width:100%;
-      min-height:52px;
-      border-radius:14px;
-      border:1px solid #cfdaea;
-      padding:14px 15px;
-      font-size:15px;
+      border:none;
       outline:none;
-      background:#fff;
-      color:#14243a;
-      transition:border-color .15s ease, box-shadow .15s ease;
+      min-height:56px;
+      border-radius:16px;
+      padding:15px 16px;
+      font-size:15px;
+      color:#13263f;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,1), rgba(250,252,255,1));
+      border:1px solid #d6deea;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.75),
+        0 1px 0 rgba(16,40,74,.02);
+      transition:border-color .16s ease, box-shadow .16s ease, transform .16s ease;
     }
 
     textarea{
-      min-height:110px;
+      min-height:120px;
       resize:vertical;
     }
 
-    input:focus, select:focus, textarea:focus{
-      border-color:#3d7bc1;
-      box-shadow:0 0 0 4px rgba(61,123,193,.14);
+    input:hover, select:hover, textarea:hover{
+      border-color:#c2cedf;
     }
 
-    .note{
-      margin-top:10px;
-      padding:14px 15px;
-      border:1px solid #d8e4f2;
-      background:#f7fbff;
-      color:#4b627f;
-      border-radius:14px;
-      font-size:13px;
+    input:focus, select:focus, textarea:focus{
+      border-color:rgba(207,164,74,.78);
+      box-shadow:
+        0 0 0 4px rgba(207,164,74,.14),
+        0 10px 22px rgba(184,133,40,.08);
+      transform:translateY(-1px);
+    }
+
+    select{
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      padding-right:46px;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2318365f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+      background-repeat:no-repeat;
+      background-position:right 14px center;
+      background-size:18px;
+    }
+
+    .field-note{
+      margin-top:8px;
+      font-size:12px;
+      color:#7a879b;
       line-height:1.6;
     }
 
-    .method-box{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      background:#fbfdff;
-      margin-bottom:16px;
+    .notice{
+      margin-top:16px;
+      padding:15px 16px;
+      border-radius:15px;
+      border:1px solid #e4e8f0;
+      background:#fbfcff;
+      color:#556983;
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    .summary-box,
+    .payment-method-box,
+    .confirmation-box{
+      margin-top:18px;
+      padding:20px;
+      border-radius:20px;
+      border:1px solid var(--line-gold);
+      background:linear-gradient(180deg, #fffdf7, #ffffff);
+      box-shadow:0 8px 24px rgba(13,28,52,.05);
+    }
+
+    .summary-box strong,
+    .confirmation-box strong{
+      color:#173761;
+    }
+
+    .payment-method-box{
       display:none;
     }
 
-    .method-box.active{display:block}
-
-    .method-box h4{
-      margin:0 0 8px;
-      font-size:18px;
-      color:#14325d;
+    .payment-method-box.active{
+      display:block;
     }
 
-    .method-box p{
+    .payment-method-box h4{
+      margin:0 0 8px;
+      font-size:19px;
+      color:#14345f;
+      font-weight:800;
+    }
+
+    .payment-method-box p{
       margin:0 0 12px;
       color:var(--muted);
-      line-height:1.6;
       font-size:14px;
+      line-height:1.7;
     }
 
-    .method-meta{
+    .meta-list{
       display:grid;
-      grid-template-columns:1fr;
       gap:10px;
-      margin:12px 0 0;
+      margin-top:12px;
     }
 
-    .method-tag{
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px dashed #c4d5ea;
-      background:#fff;
-      color:#27496f;
+    .meta-item{
+      padding:13px 14px;
+      border-radius:14px;
+      border:1px dashed rgba(207,164,74,.42);
+      background:#fffdfa;
+      color:#29496f;
       font-size:14px;
+      line-height:1.55;
     }
 
-    .check-wrap{
+    .checkbox-row{
       display:flex;
       gap:12px;
       align-items:flex-start;
-      margin-top:14px;
-      padding:14px;
-      border-radius:14px;
-      background:#fbfdff;
-      border:1px solid #d7e3f0;
+      margin-top:16px;
+      padding:14px 15px;
+      border-radius:16px;
+      border:1px solid #dde6f1;
+      background:#fafcff;
     }
 
-    .check-wrap input[type="checkbox"]{
+    .checkbox-row input[type="checkbox"]{
       width:18px;
+      height:18px;
       min-height:18px;
       margin-top:2px;
+      accent-color:#cfa44a;
     }
 
-    .summary{
-      border:1px solid #dce6f3;
-      background:#f8fbfe;
-      border-radius:16px;
-      padding:16px;
-      margin:14px 0 0;
+    .checkbox-row label{
+      margin:0;
       font-size:14px;
-      color:#35506f;
-      line-height:1.7;
+      color:#21446e;
+      line-height:1.65;
+      font-weight:700;
     }
 
-    .success-box{
-      border:1px solid #cfe8dc;
-      background:#f3fbf7;
-      color:#155b3f;
-      border-radius:18px;
-      padding:18px;
-      margin-bottom:18px;
+    .status{
+      display:none;
+      margin-top:14px;
+      padding:14px 16px;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:700;
     }
 
-    .aside{
-      padding:24px;
+    .status.success{
+      display:block;
+      background:#eefaf4;
+      border:1px solid #cfe7d8;
+      color:#1b6b48;
     }
 
-    .aside-card{
-      background:rgba(255,255,255,.95);
-      color:#10203a;
-      border-radius:22px;
+    .status.error{
+      display:block;
+      background:#fff4f2;
+      border:1px solid #f2d0ca;
+      color:#a33a2d;
+    }
+
+    .side-shell{
+      display:grid;
+      gap:18px;
+    }
+
+    .side-card{
       padding:22px;
-      margin-bottom:18px;
-      box-shadow: var(--shadow);
+      border-radius:24px;
+      background:
+        linear-gradient(135deg, rgba(230,201,122,.14), rgba(255,255,255,.04)),
+        rgba(255,255,255,.94);
+      color:#10223c;
+      border:1px solid rgba(230,201,122,.28);
+      box-shadow:var(--shadow-soft);
     }
 
-    .aside-card h3{
+    .side-card h3{
       margin:0 0 10px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size:22px;
-      color:#15345f;
+      font-size:24px;
+      line-height:1.15;
+      color:#16345e;
     }
 
-    .aside-card p, .aside-card li{
-      color:#556b87;
-      line-height:1.7;
+    .side-card p,.side-card li{
+      color:#5a6e87;
       font-size:14px;
+      line-height:1.75;
     }
 
-    .aside-card ul{
+    .side-card ul{
       margin:0;
       padding-left:18px;
     }
 
-    .fine-print{
-      font-size:12px !important;
-      color:#71829a !important;
+    .mini-gold{
+      display:inline-block;
+      margin-bottom:10px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#936716;
     }
 
-    .hidden{
-      display:none !important;
+    iframe{
+      display:none;
+      width:0;
+      height:0;
+      border:0;
     }
 
-    @media (max-width: 920px){
+    @media (max-width: 960px){
       .layout{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width: 700px){
       .benefit-grid,
       .form-grid{
         grid-template-columns:1fr;
       }
-      .card-top,
+
+      .page-wrap{
+        width:min(100% - 18px, 1200px);
+        padding-top:20px;
+      }
+
+      .main-shell,
       .card-body,
-      .aside{
-        padding:20px;
+      .card-top,
+      .side-card{
+        padding-left:20px;
+        padding-right:20px;
       }
-      .actions{
-        flex-direction:column;
-      }
-      button,.btn-link{
-        width:100%;
-      }
+
+      .main-shell{padding:10px}
+      .card-body{padding:20px}
+      .card-top{padding:24px 20px}
+      .actions{flex-direction:column}
+      button,.button-link{width:100%}
     }
   </style>
 </head>
 <body>
-  <div class="shell">
+  <iframe name="hidden_iframe_step2"></iframe>
+  <iframe name="hidden_iframe_step3"></iframe>
+  <iframe name="hidden_iframe_final"></iframe>
+
+  <div class="page-wrap">
     <section class="hero">
-      <div class="eyebrow">Golden Eagles Exclusive Program</div>
+      <div class="hero-badge">Golden Eagles Exclusive Enrollment</div>
       <h1>Member Relief &amp; Return Program</h1>
       <p>
-        A premium member participation program designed to support community relief needs,
-        strengthen shared care, and provide year-end participant value through a structured,
-        transparent enrollment process.
+        A premium enrollment experience for members participating in a structured support program
+        designed to strengthen community relief efforts while preserving an exclusive, organized,
+        and professional standard throughout the process.
       </p>
     </section>
 
     <div class="layout">
-      <section class="panel card-wrap">
-        <div class="card">
+      <section class="main-shell">
+        <div class="premium-card">
           <div class="card-top">
-            <div class="badge">Private Member Enrollment Flow</div>
-            <h2>Secure Enrollment Card</h2>
+            <div class="top-badges">
+              <span class="gold-pill">Private Member Enrollment</span>
+              <span class="gold-pill">Official Program Flow</span>
+            </div>
+            <h2>Secure Member Participation Card</h2>
             <p>
-              Review the program, complete your information, choose a payment method,
-              and confirm once your contribution has been sent.
+              Review the highlights, submit your enrollment information, choose a payment method,
+              and confirm your contribution in a clear step-by-step flow.
             </p>
-            <div class="steps">
-              <span class="step-pill">1. Review Benefits</span>
-              <span class="step-pill">2. Personal Information</span>
-              <span class="step-pill">3. Payment</span>
-              <span class="step-pill">4. Confirmation</span>
+            <div class="step-row">
+              <span class="step-chip">1. Benefits</span>
+              <span class="step-chip">2. Personal Information</span>
+              <span class="step-chip">3. Payment Confirmation</span>
+              <span class="step-chip">4. Final Review</span>
             </div>
           </div>
 
           <div class="card-body">
             <!-- STEP 1 -->
             <div class="screen active" id="screen-1">
-              <h3 class="section-title">Program Highlights</h3>
-              <p class="section-copy">
-                This member-focused program is structured to promote support within the community,
-                encourage organized participation, and maintain a premium enrollment experience.
-              </p>
+              <div class="section-header">
+                <h3 class="section-title">Program Highlights</h3>
+                <p class="section-copy">
+                  This exclusive member program is designed to support qualifying community needs,
+                  improve organized participation, and maintain clear enrollment records from start to finish.
+                </p>
+              </div>
 
-              <div class="price-box">
-                <div class="label">Suggested Enrollment Contribution</div>
-                <div class="amount">$250</div>
+              <div class="enrollment-banner">
+                <div class="mini">Suggested Enrollment Contribution</div>
+                <div class="price">$250</div>
               </div>
 
               <div class="benefit-grid">
-                <div class="benefit">
-                  <h4>Member Support Impact</h4>
-                  <p>Helps strengthen relief efforts for qualifying needs within the community.</p>
+                <div class="benefit-box">
+                  <h4>Community Relief Support</h4>
+                  <p>Helps strengthen assistance efforts for qualifying needs within the member community.</p>
                 </div>
-                <div class="benefit">
-                  <h4>Year-End Participant Value</h4>
-                  <p>Structured to provide an end-of-cycle member benefit subject to program rules.</p>
+                <div class="benefit-box">
+                  <h4>Year-End Member Value</h4>
+                  <p>Structured to support organized participant benefit handling in line with program terms.</p>
                 </div>
-                <div class="benefit">
-                  <h4>Premium Member Experience</h4>
-                  <p>Exclusive branded flow designed for secure and simple participation.</p>
+                <div class="benefit-box">
+                  <h4>Premium Enrollment Experience</h4>
+                  <p>Presented through a refined branded interface suitable for an established member organization.</p>
                 </div>
-                <div class="benefit">
-                  <h4>Organized Recordkeeping</h4>
-                  <p>Submitted details and payment confirmation can be routed directly by email.</p>
-                </div>
-              </div>
-
-              <div>
-                <strong style="color:#16345e;font-size:14px;">Accepted payment methods</strong>
-                <div class="pay-methods">
-                  <span class="pm">Cash App</span>
-                  <span class="pm">Zelle</span>
-                  <span class="pm">Apple Pay</span>
+                <div class="benefit-box">
+                  <h4>Clear Submission Records</h4>
+                  <p>Enrollment details and payment confirmations can be routed directly by email for internal review.</p>
                 </div>
               </div>
 
-              <div class="note">
-                Please ensure all payment destinations used on this page are official organization accounts.
-                Update the payment links and recipient details before publishing this page.
+              <div class="accepted-box">
+                <div class="accepted-label">Accepted payment methods</div>
+                <div class="method-list">
+                  <span class="method-pill">Cash App</span>
+                  <span class="method-pill">Zelle</span>
+                  <span class="method-pill">Apple Pay</span>
+                </div>
               </div>
 
               <div class="actions">
-                <button type="button" class="btn-primary" onclick="nextScreen(2)">Join Now</button>
+                <button type="button" class="btn-gold" onclick="showScreen(2)">Join Now</button>
               </div>
             </div>
 
             <!-- STEP 2 -->
             <div class="screen" id="screen-2">
-              <h3 class="section-title">Personal Information</h3>
-              <p class="section-copy">
-                Enter the participant details below. These details will be used to prepare
-                the payment and confirmation records.
-              </p>
+              <div class="section-header">
+                <h3 class="section-title">Personal Information</h3>
+                <p class="section-copy">
+                  Complete the enrollment details below. This step sends the member information to email before proceeding.
+                </p>
+              </div>
 
-              <form id="memberForm" action="https://formsubmit.co/01nextup@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Golden Eagles Program - New Enrollment" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="" id="nextField" />
-                <input type="hidden" name="submission_type" value="initial_enrollment" />
-                <input type="hidden" name="selected_payment_method" id="selectedPaymentHidden" value="" />
+              <form
+                id="personalForm"
+                action="https://formsubmit.co/YOUR_FORMSUBMIT_EMAIL@example.com"
+                method="POST"
+                target="hidden_iframe_step2"
+              >
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="Golden Eagles Program - Personal Information Submission">
+                <input type="hidden" name="submission_type" value="personal_information_submission">
 
-                <div class="form-grid">
-                  <div class="field">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="full_name" required />
+                <div class="form-wrap">
+                  <div class="form-grid">
+                    <div class="field">
+                      <label for="fullName">Full Name</label>
+                      <div class="input-shell">
+                        <input type="text" id="fullName" name="full_name" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="email">Email Address</label>
+                      <div class="input-shell">
+                        <input type="email" id="email" name="email" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="phone">Phone Number</label>
+                      <div class="input-shell">
+                        <input type="tel" id="phone" name="phone_number" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="memberId">Membership ID / Pilot ID</label>
+                      <div class="input-shell">
+                        <input type="text" id="memberId" name="membership_or_pilot_id" placeholder="Optional if applicable">
+                      </div>
+                    </div>
+
+                    <div class="field full">
+                      <label for="address">Mailing Address</label>
+                      <div class="input-shell">
+                        <input type="text" id="address" name="mailing_address" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="city">City</label>
+                      <div class="input-shell">
+                        <input type="text" id="city" name="city" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="state">State</label>
+                      <div class="input-shell">
+                        <input type="text" id="state" name="state" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="zip">ZIP Code</label>
+                      <div class="input-shell">
+                        <input type="text" id="zip" name="zip_code" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="country">Country</label>
+                      <div class="input-shell">
+                        <input type="text" id="country" name="country" value="United States" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="amount">Contribution Amount (USD)</label>
+                      <div class="input-shell">
+                        <input type="number" id="amount" name="contribution_amount" value="250" min="1" required>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="paymentMethod">Preferred Payment Method</label>
+                      <div class="input-shell">
+                        <select id="paymentMethod" name="preferred_payment_method" required onchange="updatePaymentMethod()">
+                          <option value="">Select payment method</option>
+                          <option value="Cash App">Cash App</option>
+                          <option value="Zelle">Zelle</option>
+                          <option value="Apple Pay">Apple Pay</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="field full">
+                      <label for="notes">Additional Notes</label>
+                      <div class="input-shell">
+                        <textarea id="notes" name="additional_notes" placeholder="Optional note"></textarea>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="field">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone_number" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="memberId">Membership ID / Pilot ID</label>
-                    <input type="text" id="memberId" name="member_id" placeholder="Optional if applicable" />
-                  </div>
-
-                  <div class="field full">
-                    <label for="address">Mailing Address</label>
-                    <input type="text" id="address" name="mailing_address" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="city">City</label>
-                    <input type="text" id="city" name="city" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="state">State</label>
-                    <input type="text" id="state" name="state" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="zip">ZIP Code</label>
-                    <input type="text" id="zip" name="zip_code" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="country">Country</label>
-                    <input type="text" id="country" name="country" value="United States" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="amount">Contribution Amount (USD)</label>
-                    <input type="number" id="amount" name="contribution_amount" value="250" min="1" required />
-                  </div>
-
-                  <div class="field">
-                    <label for="paymentMethod">Preferred Payment Method</label>
-                    <select id="paymentMethod" name="payment_method" required onchange="updatePaymentMethod()">
-                      <option value="">Select payment method</option>
-                      <option value="Cash App">Cash App</option>
-                      <option value="Zelle">Zelle</option>
-                      <option value="Apple Pay">Apple Pay</option>
-                    </select>
-                  </div>
-
-                  <div class="field full">
-                    <label for="notes">Additional Notes</label>
-                    <textarea id="notes" name="additional_notes" placeholder="Optional note"></textarea>
+                  <div class="field-note">
+                    This information will be sent first before you are moved to the payment page.
                   </div>
                 </div>
 
+                <div id="step2Status" class="status"></div>
+
                 <div class="actions">
-                  <button type="button" class="btn-secondary" onclick="nextScreen(1)">Back</button>
-                  <button type="button" class="btn-primary" onclick="proceedToPayment()">Continue to Payment</button>
+                  <button type="button" class="btn-soft" onclick="showScreen(1)">Back</button>
+                  <button type="button" class="btn-gold" onclick="submitPersonalInfo()">Continue to Payment</button>
                 </div>
               </form>
             </div>
 
             <!-- STEP 3 -->
             <div class="screen" id="screen-3">
-              <h3 class="section-title">Complete Your Payment</h3>
-              <p class="section-copy">
-                Use the selected payment method below. After sending funds, return here and confirm.
-              </p>
+              <div class="section-header">
+                <h3 class="section-title">Payment</h3>
+                <p class="section-copy">
+                  Use the selected payment method below. When funds have been sent, click the confirmation button.
+                  That confirmation step will send the payment status to email before moving ahead.
+                </p>
+              </div>
 
-              <div class="summary" id="paymentSummary"></div>
+              <div class="summary-box" id="paymentSummary"></div>
 
-              <div class="method-box" id="cashappBox">
+              <div class="payment-method-box" id="cashAppBox">
                 <h4>Cash App</h4>
-                <p>Use the organization payment link or tag below to send your contribution.</p>
-                <div class="method-meta">
-                  <div class="method-tag">Cash App Tag: <strong>$YourOrgTag</strong></div>
-                  <div class="method-tag">Payment Link: <strong>https://cash.app/$YourOrgTag</strong></div>
+                <p>Use the official organization payment link or tag below to complete your contribution.</p>
+                <div class="meta-list">
+                  <div class="meta-item">Cash App Tag: <strong>$GoldenEaglesOrg</strong></div>
+                  <div class="meta-item">Payment Link: <strong>https://cash.app/$GoldenEaglesOrg</strong></div>
                 </div>
-                <div class="actions" style="margin-top:14px;">
-                  <a class="btn-link btn-primary" href="https://cash.app/$YourOrgTag" target="_blank" rel="noopener">Open Cash App Link</a>
+                <div class="actions">
+                  <a class="button-link btn-gold" href="https://cash.app/$GoldenEaglesOrg" target="_blank" rel="noopener">Open Cash App</a>
                 </div>
               </div>
 
-              <div class="method-box" id="zelleBox">
+              <div class="payment-method-box" id="zelleBox">
                 <h4>Zelle</h4>
-                <p>Send payment to the official organization Zelle recipient listed below.</p>
-                <div class="method-meta">
-                  <div class="method-tag">Zelle Recipient Name: <strong>Golden Eagles Organization</strong></div>
-                  <div class="method-tag">Zelle Email or Phone: <strong>payments@example.org</strong></div>
+                <p>Send your contribution to the official organization Zelle destination listed below.</p>
+                <div class="meta-list">
+                  <div class="meta-item">Recipient Name: <strong>Golden Eagles Organization</strong></div>
+                  <div class="meta-item">Recipient Email or Phone: <strong>payments@thegoldeneagles.org</strong></div>
                 </div>
               </div>
 
-              <div class="method-box" id="applepayBox">
+              <div class="payment-method-box" id="applePayBox">
                 <h4>Apple Pay</h4>
-                <p>Use the approved Apple Pay option for the organization if available.</p>
-                <div class="method-meta">
-                  <div class="method-tag">Apple Pay Contact: <strong>payments@example.org</strong></div>
-                  <div class="method-tag">Apple Pay Link: <strong>Add official link if available</strong></div>
+                <p>Use the approved Apple Pay destination if your organization has one enabled.</p>
+                <div class="meta-list">
+                  <div class="meta-item">Apple Pay Contact: <strong>payments@thegoldeneagles.org</strong></div>
+                  <div class="meta-item">Apple Pay Link: <strong>Add official Apple Pay link if available</strong></div>
                 </div>
               </div>
 
-              <div class="check-wrap">
-                <input type="checkbox" id="sentFundsCheck" />
-                <label for="sentFundsCheck" style="margin:0;font-weight:600;color:#20446e;">
-                  I confirm that I have sent the funds using the selected payment method.
-                </label>
-              </div>
+              <form
+                id="paymentConfirmForm"
+                action="https://formsubmit.co/YOUR_FORMSUBMIT_EMAIL@example.com"
+                method="POST"
+                target="hidden_iframe_step3"
+              >
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="Golden Eagles Program - Funds Sent Confirmation">
+                <input type="hidden" name="submission_type" value="payment_sent_confirmation">
 
-              <div class="actions">
-                <button type="button" class="btn-secondary" onclick="nextScreen(2)">Back</button>
-                <button type="button" class="btn-primary" onclick="goToConfirmation()">I’ve Sent Funds</button>
-              </div>
+                <input type="hidden" name="full_name" id="pc_full_name">
+                <input type="hidden" name="email" id="pc_email">
+                <input type="hidden" name="phone_number" id="pc_phone">
+                <input type="hidden" name="membership_or_pilot_id" id="pc_memberId">
+                <input type="hidden" name="mailing_address" id="pc_address">
+                <input type="hidden" name="city" id="pc_city">
+                <input type="hidden" name="state" id="pc_state">
+                <input type="hidden" name="zip_code" id="pc_zip">
+                <input type="hidden" name="country" id="pc_country">
+                <input type="hidden" name="contribution_amount" id="pc_amount">
+                <input type="hidden" name="preferred_payment_method" id="pc_payment_method">
+                <input type="hidden" name="additional_notes" id="pc_notes">
+                <input type="hidden" name="payment_status" value="Member confirmed funds were sent">
+
+                <div class="form-wrap">
+                  <div class="form-grid">
+                    <div class="field">
+                      <label for="transactionRef">Transaction Reference / Last 4 Digits</label>
+                      <div class="input-shell">
+                        <input type="text" id="transactionRef" name="transaction_reference" placeholder="Optional but recommended">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="paymentDate">Date Funds Were Sent</label>
+                      <div class="input-shell">
+                        <input type="date" id="paymentDate" name="payment_date_sent">
+                      </div>
+                    </div>
+
+                    <div class="field full">
+                      <label for="paymentNote">Payment Note</label>
+                      <div class="input-shell">
+                        <textarea id="paymentNote" name="payment_note" placeholder="Optional note about the payment"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="checkbox-row">
+                    <input type="checkbox" id="sentFundsCheck">
+                    <label for="sentFundsCheck">
+                      I confirm that I have sent the funds using the selected official payment method.
+                    </label>
+                  </div>
+                </div>
+
+                <div id="step3Status" class="status"></div>
+
+                <div class="actions">
+                  <button type="button" class="btn-soft" onclick="showScreen(2)">Back</button>
+                  <button type="button" class="btn-gold" onclick="submitFundsConfirmation()">I’ve Sent Funds</button>
+                </div>
+              </form>
             </div>
 
             <!-- STEP 4 -->
             <div class="screen" id="screen-4">
-              <div class="success-box">
-                Your payment confirmation is ready to be submitted.
+              <div class="section-header">
+                <h3 class="section-title">Final Review</h3>
+                <p class="section-copy">
+                  Review the enrollment summary below and submit the final record if you want an additional final email entry.
+                </p>
               </div>
 
-              <h3 class="section-title">Final Confirmation</h3>
-              <p class="section-copy">
-                Review and send your confirmation. This can email the entered details and selected method through FormSubmit.
-              </p>
+              <div class="confirmation-box" id="finalSummary"></div>
 
-              <form id="confirmForm" action="https://formsubmit.co/YOUR_FORMSUBMIT_EMAIL@example.com" method="POST">
-                <input type="hidden" name="_subject" value="Golden Eagles Program - Payment Confirmation" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="submission_type" value="payment_confirmation" />
+              <form
+                id="finalForm"
+                action="https://formsubmit.co/YOUR_FORMSUBMIT_EMAIL@example.com"
+                method="POST"
+                target="hidden_iframe_final"
+              >
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="Golden Eagles Program - Final Review Submission">
+                <input type="hidden" name="submission_type" value="final_review_submission">
 
-                <input type="hidden" name="full_name" id="c_full_name" />
-                <input type="hidden" name="email" id="c_email" />
-                <input type="hidden" name="phone_number" id="c_phone" />
-                <input type="hidden" name="member_id" id="c_member_id" />
-                <input type="hidden" name="mailing_address" id="c_address" />
-                <input type="hidden" name="city" id="c_city" />
-                <input type="hidden" name="state" id="c_state" />
-                <input type="hidden" name="zip_code" id="c_zip" />
-                <input type="hidden" name="country" id="c_country" />
-                <input type="hidden" name="contribution_amount" id="c_amount" />
-                <input type="hidden" name="payment_method" id="c_payment_method" />
-                <input type="hidden" name="additional_notes" id="c_notes" />
-                <input type="hidden" name="payment_confirmation_status" value="Member confirmed funds were sent" />
+                <input type="hidden" name="full_name" id="ff_full_name">
+                <input type="hidden" name="email" id="ff_email">
+                <input type="hidden" name="phone_number" id="ff_phone">
+                <input type="hidden" name="membership_or_pilot_id" id="ff_memberId">
+                <input type="hidden" name="mailing_address" id="ff_address">
+                <input type="hidden" name="city" id="ff_city">
+                <input type="hidden" name="state" id="ff_state">
+                <input type="hidden" name="zip_code" id="ff_zip">
+                <input type="hidden" name="country" id="ff_country">
+                <input type="hidden" name="contribution_amount" id="ff_amount">
+                <input type="hidden" name="preferred_payment_method" id="ff_payment_method">
+                <input type="hidden" name="additional_notes" id="ff_notes">
+                <input type="hidden" name="transaction_reference" id="ff_transactionRef">
+                <input type="hidden" name="payment_date_sent" id="ff_paymentDate">
+                <input type="hidden" name="payment_note" id="ff_paymentNote">
+                <input type="hidden" name="payment_status" value="Final review submitted">
 
-                <div class="summary" id="confirmSummary"></div>
-
-                <div class="field" style="margin-top:16px;">
-                  <label for="transactionRef">Transaction Reference / Last 4 Digits / Identifier</label>
-                  <input type="text" id="transactionRef" name="transaction_reference" placeholder="Optional but recommended" />
-                </div>
-
-                <div class="field">
-                  <label for="confirmNote">Confirmation Note</label>
-                  <textarea id="confirmNote" name="confirmation_note" placeholder="Any extra information about the payment"></textarea>
-                </div>
-
-                <div class="check-wrap">
-                  <input type="checkbox" id="finalAgree" required />
-                  <label for="finalAgree" style="margin:0;font-weight:600;color:#20446e;">
-                    I confirm that the information provided is accurate and that payment was sent to the official organization destination.
+                <div class="checkbox-row">
+                  <input type="checkbox" id="finalAgree" required>
+                  <label for="finalAgree">
+                    I confirm that the information entered is accurate and that funds were sent to an official organization payment destination.
                   </label>
                 </div>
 
+                <div id="finalStatus" class="status"></div>
+
                 <div class="actions">
-                  <button type="button" class="btn-secondary" onclick="nextScreen(3)">Back</button>
-                  <button type="submit" class="btn-primary">Submit Confirmation</button>
+                  <button type="button" class="btn-soft" onclick="showScreen(3)">Back</button>
+                  <button type="submit" class="btn-gold">Submit Final Review</button>
                 </div>
               </form>
+
+              <div class="notice">
+                This final step is optional if you only want the first two email actions. Leave it in place if you want a third final email record as well.
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <aside class="panel aside">
-        <div class="aside-card">
-          <h3>Additional Member Benefits</h3>
+      <aside class="side-shell">
+        <div class="side-card">
+          <span class="mini-gold">Additional Benefits</span>
+          <h3>Program Value</h3>
           <ul>
-            <li>Structured enrollment and payment confirmation flow</li>
-            <li>Premium presentation suitable for an established member organization</li>
-            <li>Supports direct email routing of enrollment and confirmation details</li>
-            <li>Can be adapted for annual cycles, special campaigns, or chapter-based participation</li>
+            <li>Premium branded member-facing card flow</li>
+            <li>Organized collection of personal and payment confirmation details</li>
+            <li>Suitable for internal manual payment review</li>
+            <li>Gold-accent presentation appropriate for a legacy member organization</li>
           </ul>
         </div>
 
-        <div class="aside-card">
-          <h3>Recommended Operational Notes</h3>
+        <div class="side-card">
+          <span class="mini-gold">Recommended Setup</span>
+          <h3>Before Publishing</h3>
           <ul>
-            <li>Use only official organization-owned payment accounts</li>
-            <li>Publish clear terms for contributions and participant benefits</li>
-            <li>Keep records of each enrollment and payment confirmation</li>
-            <li>Consider a separate acknowledgment email after manual review</li>
+            <li>Replace the FormSubmit email with the correct destination</li>
+            <li>Replace all placeholder payment destinations with official organization-owned accounts only</li>
+            <li>Test the three email steps with a real inbox</li>
+            <li>Consider adding your organization logo in the top area</li>
           </ul>
         </div>
 
-        <div class="aside-card">
-          <h3>Important</h3>
-          <p class="fine-print">
-            This template handles front-end collection and email routing only. Payment verification is still manual
-            unless you later connect a real backend or payment processor.
+        <div class="side-card">
+          <span class="mini-gold">Important Note</span>
+          <h3>Manual Verification</h3>
+          <p>
+            This flow records submissions by email, but it does not automatically verify whether funds were truly received.
+            Payment review still needs to be handled by the organization internally.
           </p>
         </div>
       </aside>
@@ -790,13 +1066,22 @@
   </div>
 
   <script>
-    function nextScreen(num){
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById('screen-' + num).classList.add('active');
+    function showScreen(number){
+      document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+      document.getElementById('screen-' + number).classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function getFormValues(){
+    function escapeHtml(value){
+      return String(value || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function getPersonalData(){
       return {
         fullName: document.getElementById('fullName').value.trim(),
         email: document.getElementById('email').value.trim(),
@@ -815,82 +1100,129 @@
 
     function updatePaymentMethod(){
       const method = document.getElementById('paymentMethod').value;
-      document.getElementById('selectedPaymentHidden').value = method;
-
-      document.getElementById('cashappBox').classList.remove('active');
+      document.getElementById('cashAppBox').classList.remove('active');
       document.getElementById('zelleBox').classList.remove('active');
-      document.getElementById('applepayBox').classList.remove('active');
+      document.getElementById('applePayBox').classList.remove('active');
 
       if(method === 'Cash App'){
-        document.getElementById('cashappBox').classList.add('active');
+        document.getElementById('cashAppBox').classList.add('active');
       } else if(method === 'Zelle'){
         document.getElementById('zelleBox').classList.add('active');
       } else if(method === 'Apple Pay'){
-        document.getElementById('applepayBox').classList.add('active');
+        document.getElementById('applePayBox').classList.add('active');
       }
     }
 
-    function proceedToPayment(){
-      const form = document.getElementById('memberForm');
-      if(!form.reportValidity()) return;
+    function fillStep3HiddenFields(){
+      const data = getPersonalData();
+      document.getElementById('pc_full_name').value = data.fullName;
+      document.getElementById('pc_email').value = data.email;
+      document.getElementById('pc_phone').value = data.phone;
+      document.getElementById('pc_memberId').value = data.memberId;
+      document.getElementById('pc_address').value = data.address;
+      document.getElementById('pc_city').value = data.city;
+      document.getElementById('pc_state').value = data.state;
+      document.getElementById('pc_zip').value = data.zip;
+      document.getElementById('pc_country').value = data.country;
+      document.getElementById('pc_amount').value = data.amount;
+      document.getElementById('pc_payment_method').value = data.paymentMethod;
+      document.getElementById('pc_notes').value = data.notes;
+    }
 
-      const data = getFormValues();
+    function fillFinalHiddenFields(){
+      const data = getPersonalData();
+      document.getElementById('ff_full_name').value = data.fullName;
+      document.getElementById('ff_email').value = data.email;
+      document.getElementById('ff_phone').value = data.phone;
+      document.getElementById('ff_memberId').value = data.memberId;
+      document.getElementById('ff_address').value = data.address;
+      document.getElementById('ff_city').value = data.city;
+      document.getElementById('ff_state').value = data.state;
+      document.getElementById('ff_zip').value = data.zip;
+      document.getElementById('ff_country').value = data.country;
+      document.getElementById('ff_amount').value = data.amount;
+      document.getElementById('ff_payment_method').value = data.paymentMethod;
+      document.getElementById('ff_notes').value = data.notes;
+      document.getElementById('ff_transactionRef').value = document.getElementById('transactionRef').value.trim();
+      document.getElementById('ff_paymentDate').value = document.getElementById('paymentDate').value;
+      document.getElementById('ff_paymentNote').value = document.getElementById('paymentNote').value.trim();
+    }
 
-      updatePaymentMethod();
+    function updatePaymentSummary(){
+      const data = getPersonalData();
 
       document.getElementById('paymentSummary').innerHTML = `
         <strong>Participant:</strong> ${escapeHtml(data.fullName)}<br>
         <strong>Email:</strong> ${escapeHtml(data.email)}<br>
         <strong>Phone:</strong> ${escapeHtml(data.phone)}<br>
-        <strong>Address:</strong> ${escapeHtml(data.address)}, ${escapeHtml(data.city)}, ${escapeHtml(data.state)} ${escapeHtml(data.zip)}, ${escapeHtml(data.country)}<br>
+        <strong>Mailing Address:</strong> ${escapeHtml(data.address)}, ${escapeHtml(data.city)}, ${escapeHtml(data.state)} ${escapeHtml(data.zip)}, ${escapeHtml(data.country)}<br>
         <strong>Contribution Amount:</strong> $${escapeHtml(data.amount)}<br>
         <strong>Selected Payment Method:</strong> ${escapeHtml(data.paymentMethod)}
       `;
-
-      nextScreen(3);
     }
 
-    function goToConfirmation(){
-      const sentCheck = document.getElementById('sentFundsCheck');
-      if(!sentCheck.checked){
-        alert('Please confirm that you have sent the funds before proceeding.');
-        return;
-      }
+    function updateFinalSummary(){
+      const data = getPersonalData();
+      const transactionRef = document.getElementById('transactionRef').value.trim();
+      const paymentDate = document.getElementById('paymentDate').value;
+      const paymentNote = document.getElementById('paymentNote').value.trim();
 
-      const data = getFormValues();
-
-      document.getElementById('c_full_name').value = data.fullName;
-      document.getElementById('c_email').value = data.email;
-      document.getElementById('c_phone').value = data.phone;
-      document.getElementById('c_member_id').value = data.memberId;
-      document.getElementById('c_address').value = data.address;
-      document.getElementById('c_city').value = data.city;
-      document.getElementById('c_state').value = data.state;
-      document.getElementById('c_zip').value = data.zip;
-      document.getElementById('c_country').value = data.country;
-      document.getElementById('c_amount').value = data.amount;
-      document.getElementById('c_payment_method').value = data.paymentMethod;
-      document.getElementById('c_notes').value = data.notes;
-
-      document.getElementById('confirmSummary').innerHTML = `
+      document.getElementById('finalSummary').innerHTML = `
         <strong>Name:</strong> ${escapeHtml(data.fullName)}<br>
         <strong>Email:</strong> ${escapeHtml(data.email)}<br>
         <strong>Contribution Amount:</strong> $${escapeHtml(data.amount)}<br>
         <strong>Payment Method:</strong> ${escapeHtml(data.paymentMethod)}<br>
-        <strong>Status:</strong> Member confirmed funds were sent
+        <strong>Transaction Reference:</strong> ${escapeHtml(transactionRef || 'Not provided')}<br>
+        <strong>Payment Date:</strong> ${escapeHtml(paymentDate || 'Not provided')}<br>
+        <strong>Payment Note:</strong> ${escapeHtml(paymentNote || 'Not provided')}
       `;
-
-      nextScreen(4);
     }
 
-    function escapeHtml(str){
-      return String(str)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
+    function setStatus(id, type, message){
+      const el = document.getElementById(id);
+      el.className = 'status ' + type;
+      el.textContent = message;
     }
+
+    function submitPersonalInfo(){
+      const form = document.getElementById('personalForm');
+      if(!form.reportValidity()) return;
+
+      setStatus('step2Status', 'success', 'Submitting personal information...');
+      form.submit();
+
+      setTimeout(() => {
+        updatePaymentMethod();
+        updatePaymentSummary();
+        fillStep3HiddenFields();
+        showScreen(3);
+        setStatus('step2Status', 'success', 'Personal information submitted successfully.');
+      }, 900);
+    }
+
+    function submitFundsConfirmation(){
+      if(!document.getElementById('sentFundsCheck').checked){
+        setStatus('step3Status', 'error', 'Please confirm that you have sent the funds before continuing.');
+        return;
+      }
+
+      fillStep3HiddenFields();
+      const paymentForm = document.getElementById('paymentConfirmForm');
+      setStatus('step3Status', 'success', 'Submitting payment confirmation...');
+      paymentForm.submit();
+
+      setTimeout(() => {
+        fillFinalHiddenFields();
+        updateFinalSummary();
+        showScreen(4);
+        setStatus('step3Status', 'success', 'Payment confirmation submitted successfully.');
+      }, 900);
+    }
+
+    document.getElementById('finalForm').addEventListener('submit', function(){
+      fillFinalHiddenFields();
+      setStatus('finalStatus', 'success', 'Submitting final review...');
+    });
   </script>
 </body>
 </html>
