@@ -355,6 +355,85 @@
       line-height:1.65;
     }
 
+    .benefit-grid.single-benefit-card{
+      grid-template-columns:1fr;
+    }
+
+    .benefit-list-card{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(207,164,74,.34);
+      background:
+        radial-gradient(circle at top right, rgba(247,231,184,.30), transparent 28%),
+        linear-gradient(180deg, #fffef9 0%, #fff8ea 100%);
+      box-shadow:0 10px 24px rgba(16,40,74,.06), 0 5px 14px rgba(184,133,40,.08);
+    }
+
+    .benefit-card-heading{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+      padding-bottom:10px;
+      border-bottom:1px solid rgba(207,164,74,.20);
+    }
+
+    .benefit-card-heading span{
+      color:#936716;
+      font-size:10.5px;
+      font-weight:900;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    .benefit-card-heading strong{
+      color:#11284a;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:18px;
+      line-height:1.12;
+    }
+
+    .premium-benefit-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:8px;
+    }
+
+    .premium-benefit-list li{
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 10px;
+      border-radius:13px;
+      border:1px solid rgba(207,164,74,.22);
+      background:linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
+      color:#173661;
+      font-size:13.5px;
+      font-weight:850;
+      line-height:1.25;
+      box-shadow:0 5px 12px rgba(16,40,74,.035);
+    }
+
+    .benefit-check{
+      width:21px;
+      height:21px;
+      min-width:21px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#0f1f34;
+      font-size:12px;
+      font-weight:900;
+      background:linear-gradient(180deg, #f6dfa4, #d8af57 65%, #b9872c 100%);
+      box-shadow:0 3px 8px rgba(184,133,40,.20);
+    }
+
     .accepted-box{
       padding:18px;
       border-radius:18px;
@@ -998,6 +1077,41 @@
         font-size:15px;
       }
 
+      .premium-benefit-list{
+        grid-template-columns:1fr;
+      }
+
+      .benefit-list-card{
+        padding:14px;
+      }
+
+      .benefit-card-heading{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .benefit-card-heading strong{
+        font-size:18px;
+      }
+
+      .premium-benefit-list li{
+        min-height:40px;
+        padding:8px 9px;
+        font-size:13px;
+      }
+
+      .benefit-check{
+        width:20px;
+        height:20px;
+        min-width:20px;
+      }
+
+      @media (max-width: 390px){
+        .premium-benefit-list{
+          grid-template-columns:1fr;
+        }
+      }
+
       .form-wrap-premium{
         padding:18px;
       }
@@ -1058,18 +1172,25 @@
                 <div class="enrollment-banner">
                   <div class="mini">Program Fee</div>
                   <div class="price">$250</div>
-                </div>
+                </div>                <div class="benefit-grid single-benefit-card">
+                  <div class="benefit-list-card">
+                    <div class="benefit-card-heading">
+                      <span>Exclusive Member Benefits</span>
+                      <strong>Program Value Package</strong>
+                    </div>
 
-                <div class="benefit-grid">
-                  <div class="benefit-box">
-                    <h4>• Weekly rewards</h4>
-                       <h4>• Reunion credit</h4>
-                       <h4>• Airport parking vouchers</h4>
-                     <h4>• Merchandise</h4>
-                    <h4>• Event tickets</h4>
-                    <h4>• Equal award distribution from the Member Travel Bonus Fund</h4>
-                    
-                    
+                    <ul class="premium-benefit-list">
+                      <li><span class="benefit-check">✓</span>Weekly rewards</li>
+                      <li><span class="benefit-check">✓</span>Travel credit</li>
+                      <li><span class="benefit-check">✓</span>Reunion credit</li>
+                      <li><span class="benefit-check">✓</span>Travel gear package</li>
+                      <li><span class="benefit-check">✓</span>Airport parking vouchers</li>
+                      <li><span class="benefit-check">✓</span>Reunion hotel credit</li>
+                      <li><span class="benefit-check">✓</span>Member Travel Bonus Fund</li>
+                      <li><span class="benefit-check">✓</span>Merchandise</li>
+                      <li><span class="benefit-check">✓</span>Event tickets</li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div class="accepted-box">
@@ -1487,7 +1608,8 @@
 
     function showScreen(number){
       document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-      document.getElementById('screen-' + number).classList.add('active');
+      const nextScreen = document.getElementById('screen-' + number);
+      if (nextScreen) nextScreen.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
