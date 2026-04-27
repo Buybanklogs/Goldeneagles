@@ -1599,6 +1599,20 @@
       }
     };
 
+    function byId(id){
+      return document.getElementById(id);
+    }
+
+    function fieldValue(id){
+      const el = byId(id);
+      return el ? String(el.value || '').trim() : '';
+    }
+
+    function setFieldValue(id, value){
+      const el = byId(id);
+      if(el) el.value = value || '';
+    }
+
     function getMethodLogoMarkup(method, sizeClass = '') {
       const item = LOGOS[method];
       if (!item) return '';
@@ -1608,9 +1622,16 @@
 
     function showScreen(number){
       document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-      const nextScreen = document.getElementById('screen-' + number);
-      if (nextScreen) nextScreen.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const nextScreen = byId('screen-' + number);
+      if (nextScreen) {
+        nextScreen.classList.add('active');
+      }
+
+      const card = document.querySelector('.premium-card');
+      const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
+      const top = card ? (card.getBoundingClientRect().top + window.pageYOffset - headerOffset - 10) : 0;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
 
     function escapeHtml(value){
@@ -1624,28 +1645,30 @@
 
     function getPersonalData(){
       return {
-        fullName: document.getElementById('fullName').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
-        memberId: document.getElementById('memberId').value.trim(),
-        address: document.getElementById('address').value.trim(),
-        city: document.getElementById('city').value.trim(),
-        state: document.getElementById('state').value.trim(),
-        zip: document.getElementById('zip').value.trim(),
-        country: document.getElementById('country').value.trim(),
-        amount: document.getElementById('amount').value.trim(),
-        paymentMethod: document.getElementById('paymentMethod').value,
-        notes: document.getElementById('notes').value.trim()
+        fullName: fieldValue('fullName'),
+        email: fieldValue('email'),
+        phone: fieldValue('phone'),
+        memberId: fieldValue('memberId'), /* safe even if Membership ID field is commented out */
+        address: fieldValue('address'),
+        city: fieldValue('city'),
+        state: fieldValue('state'),
+        zip: fieldValue('zip'),
+        country: fieldValue('country'),
+        amount: fieldValue('amount'),
+        paymentMethod: fieldValue('paymentMethod'),
+        notes: fieldValue('notes')
       };
     }
 
-    const paymentSelect = document.getElementById('paymentSelect');
-    const paymentMethodInput = document.getElementById('paymentMethod');
-    const paymentMethodTrigger = document.getElementById('paymentMethodTrigger');
-    const paymentMethodMenu = document.getElementById('paymentMethodMenu');
-    const paymentTriggerContent = document.getElementById('paymentTriggerContent');
+    const paymentSelect = byId('paymentSelect');
+    const paymentMethodInput = byId('paymentMethod');
+    const paymentMethodTrigger = byId('paymentMethodTrigger');
+    const paymentMethodMenu = byId('paymentMethodMenu');
+    const paymentTriggerContent = byId('paymentTriggerContent');
 
     function setPaymentMethod(value){
+      if(!paymentMethodInput || !paymentTriggerContent) return;
+
       paymentMethodInput.value = value;
 
       if(value){
@@ -1665,62 +1688,70 @@
     }
 
     function openPaymentMenu(){
+      if(!paymentMethodTrigger || !paymentMethodMenu) return;
       paymentMethodTrigger.classList.add('open');
       paymentMethodMenu.classList.add('open');
       paymentMethodTrigger.setAttribute('aria-expanded', 'true');
     }
 
     function closePaymentMenu(){
+      if(!paymentMethodTrigger || !paymentMethodMenu) return;
       paymentMethodTrigger.classList.remove('open');
       paymentMethodMenu.classList.remove('open');
       paymentMethodTrigger.setAttribute('aria-expanded', 'false');
     }
 
-    paymentMethodTrigger.addEventListener('click', function(){
-      if(paymentMethodMenu.classList.contains('open')){
-        closePaymentMenu();
-      } else {
-        openPaymentMenu();
-      }
-    });
-
-    document.querySelectorAll('.payment-option').forEach(option => {
-      option.addEventListener('click', function(){
-        setPaymentMethod(this.dataset.value);
-        closePaymentMenu();
+    if(paymentMethodTrigger && paymentMethodMenu && paymentSelect){
+      paymentMethodTrigger.addEventListener('click', function(){
+        if(paymentMethodMenu.classList.contains('open')){
+          closePaymentMenu();
+        } else {
+          openPaymentMenu();
+        }
       });
-    });
 
-    document.addEventListener('click', function(e){
-      if(!paymentSelect.contains(e.target)){
-        closePaymentMenu();
-      }
-    });
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.addEventListener('click', function(){
+          setPaymentMethod(this.dataset.value);
+          closePaymentMenu();
+        });
+      });
+
+      document.addEventListener('click', function(e){
+        if(!paymentSelect.contains(e.target)){
+          closePaymentMenu();
+        }
+      });
+    }
 
     function updatePaymentMethod(){
-      const method = paymentMethodInput.value;
+      const method = paymentMethodInput ? paymentMethodInput.value : '';
 
-      document.getElementById('cashAppBox').classList.remove('active');
-      document.getElementById('zelleBox').classList.remove('active');
-      document.getElementById('applePayBox').classList.remove('active');
+      const cashAppBox = byId('cashAppBox');
+      const zelleBox = byId('zelleBox');
+      const applePayBox = byId('applePayBox');
 
-      const selectedMethodVisual = document.getElementById('selectedMethodVisual');
-      const selectedMethodLogo = document.getElementById('selectedMethodLogo');
-      const selectedMethodName = document.getElementById('selectedMethodName');
+      if(cashAppBox) cashAppBox.classList.remove('active');
+      if(zelleBox) zelleBox.classList.remove('active');
+      if(applePayBox) applePayBox.classList.remove('active');
 
-      if(method === 'Cash App'){
-        document.getElementById('cashAppBox').classList.add('active');
-      } else if(method === 'Zelle'){
-        document.getElementById('zelleBox').classList.add('active');
-      } else if(method === 'Apple Pay'){
-        document.getElementById('applePayBox').classList.add('active');
+      const selectedMethodVisual = byId('selectedMethodVisual');
+      const selectedMethodLogo = byId('selectedMethodLogo');
+      const selectedMethodName = byId('selectedMethodName');
+
+      if(method === 'Cash App' && cashAppBox){
+        cashAppBox.classList.add('active');
+      } else if(method === 'Zelle' && zelleBox){
+        zelleBox.classList.add('active');
+      } else if(method === 'Apple Pay' && applePayBox){
+        applePayBox.classList.add('active');
       }
 
-      if(method){
+      if(method && selectedMethodLogo && selectedMethodName && selectedMethodVisual){
         selectedMethodLogo.innerHTML = getMethodLogoMarkup(method, 'brand-lg');
         selectedMethodName.textContent = method;
         selectedMethodVisual.classList.add('active');
-      } else {
+      } else if(selectedMethodLogo && selectedMethodName && selectedMethodVisual){
         selectedMethodLogo.innerHTML = '';
         selectedMethodName.textContent = '—';
         selectedMethodVisual.classList.remove('active');
@@ -1729,18 +1760,19 @@
 
     function fillStep3HiddenFields(){
       const data = getPersonalData();
-      document.getElementById('pc_full_name').value = data.fullName;
-      document.getElementById('pc_email').value = data.email;
-      document.getElementById('pc_phone').value = data.phone;
-      document.getElementById('pc_memberId').value = data.memberId;
-      document.getElementById('pc_address').value = data.address;
-      document.getElementById('pc_city').value = data.city;
-      document.getElementById('pc_state').value = data.state;
-      document.getElementById('pc_zip').value = data.zip;
-      document.getElementById('pc_country').value = data.country;
-      document.getElementById('pc_amount').value = data.amount;
-      document.getElementById('pc_payment_method').value = data.paymentMethod;
-      document.getElementById('pc_notes').value = data.notes;
+
+      setFieldValue('pc_full_name', data.fullName);
+      setFieldValue('pc_email', data.email);
+      setFieldValue('pc_phone', data.phone);
+      setFieldValue('pc_memberId', data.memberId);
+      setFieldValue('pc_address', data.address);
+      setFieldValue('pc_city', data.city);
+      setFieldValue('pc_state', data.state);
+      setFieldValue('pc_zip', data.zip);
+      setFieldValue('pc_country', data.country);
+      setFieldValue('pc_amount', data.amount);
+      setFieldValue('pc_payment_method', data.paymentMethod);
+      setFieldValue('pc_notes', data.notes);
     }
 
     function renderMethodSummaryValue(method){
@@ -1755,8 +1787,10 @@
 
     function updatePaymentSummary(){
       const data = getPersonalData();
+      const paymentSummary = byId('paymentSummary');
+      if(!paymentSummary) return;
 
-      document.getElementById('paymentSummary').innerHTML = `
+      paymentSummary.innerHTML = `
         <div class="summary-row">
           <div class="summary-label">Participant</div>
           <div class="summary-value">${escapeHtml(data.fullName)}</div>
@@ -1786,8 +1820,10 @@
 
     function updateFinalSummary(){
       const data = getPersonalData();
+      const finalSummary = byId('finalSummary');
+      if(!finalSummary) return;
 
-      document.getElementById('finalSummary').innerHTML = `
+      finalSummary.innerHTML = `
         <div class="summary-row">
           <div class="summary-label">Participant</div>
           <div class="summary-value">${escapeHtml(data.fullName)}</div>
@@ -1816,15 +1852,17 @@
     }
 
     function setStatus(id, type, message){
-      const el = document.getElementById(id);
+      const el = byId(id);
+      if(!el) return;
       el.className = 'status ' + type;
       el.textContent = message;
     }
 
     function submitPersonalInfo(){
-      const form = document.getElementById('personalForm');
+      const form = byId('personalForm');
+      if(!form) return;
 
-      if(!document.getElementById('paymentMethod').value){
+      if(!fieldValue('paymentMethod')){
         setStatus('step2Status', 'error', 'Please select a payment method.');
         return;
       }
@@ -1832,15 +1870,23 @@
       if(!form.reportValidity()) return;
 
       setStatus('step2Status', 'success', 'Submitting personal information...');
-      form.submit();
+
+      /* Build the payment screen before submitting. This prevents redirect/next-step failure
+         if FormSubmit or the hidden iframe is slow on mobile. */
+      updatePaymentMethod();
+      updatePaymentSummary();
+      fillStep3HiddenFields();
+
+      try {
+        form.submit();
+      } catch (error) {
+        console.warn('FormSubmit personal info submission could not complete:', error);
+      }
 
       setTimeout(() => {
-        updatePaymentMethod();
-        updatePaymentSummary();
-        fillStep3HiddenFields();
-        showScreen(3);
         setStatus('step2Status', 'success', 'Personal information submitted successfully.');
-      }, 900);
+        showScreen(3);
+      }, 450);
     }
 
     function goToFinalConfirmation(){
@@ -1850,19 +1896,26 @@
     }
 
     function submitFundsConfirmation(){
-      if(!document.getElementById('sentFundsCheck').checked){
+      const sentFundsCheck = byId('sentFundsCheck');
+      if(!sentFundsCheck || !sentFundsCheck.checked){
         setStatus('step3Status', 'error', 'Please confirm that you have sent the funds before continuing.');
         return;
       }
 
       fillStep3HiddenFields();
-      const paymentForm = document.getElementById('paymentConfirmForm');
+
+      const paymentForm = byId('paymentConfirmForm');
       setStatus('step3Status', 'success', 'Submitting payment confirmation...');
-      paymentForm.submit();
+
+      try {
+        if(paymentForm) paymentForm.submit();
+      } catch (error) {
+        console.warn('FormSubmit payment confirmation could not complete:', error);
+      }
 
       setTimeout(() => {
         setStatus('step3Status', 'success', 'Payment confirmation submitted successfully.');
-      }, 900);
+      }, 450);
     }
 
     setPaymentMethod('');
