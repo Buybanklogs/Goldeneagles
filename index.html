@@ -1,21 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		  <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Golden Eagles Member Relief & Return Program</title>
-<meta property="og:site_name" content="Golden Eagles" />
-<meta property="og:title" content="Membership Fee or Donations" />
 
-<meta property="og:image" content="http://www.thegoldeneagles.org/uploads/4/5/2/4/45245885/s210938148324167030_p6_i3_w640.jpeg" />
+  <meta property="og:site_name" content="Golden Eagles" />
+  <meta property="og:title" content="Membership Fee or Donations" />
+  <meta property="og:image" content="http://www.thegoldeneagles.org/uploads/4/5/2/4/45245885/s210938148324167030_p6_i3_w640.jpeg" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-		
-
-	<style>
+  <style>
     :root{
       --navy-1:#07111f;
       --gold-1:#f7e7b8;
@@ -30,18 +25,78 @@
       --shadow-gold:0 12px 30px rgba(184,133,40,.25);
     }
 
+    html, body{
+      margin:0;
+      padding:0;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      min-height:100vh;
+      overflow-x:hidden;
+      background:#f3f3f3;
+      font-family:Inter, Arial, Helvetica, sans-serif;
+      color:#fff;
+    }
+
+    #wrappers,
+    .bg-wrappers{
+      width:100%;
+    }
+
+    #headers,
+    #sitename{
+      display:none;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:linear-gradient(180deg, rgba(7,17,31,.96), rgba(12,24,48,.92));
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(230,201,122,.22);
+      box-shadow:0 8px 22px rgba(0,0,0,.12);
+    }
+
+    .site-header-inner{
+      width:min(920px, calc(100% - 28px));
+      margin:0 auto;
+      padding:12px 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .site-brand{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      text-decoration:none;
+    }
+
+    .site-brand img{
+      display:block;
+      width:min(100%, 420px);
+      height:auto;
+      max-height:74px;
+      object-fit:contain;
+    }
 
     .page-wrap{
-      width:min(1200px, calc(100% - 28px));
+      width:min(920px, calc(100% - 28px));
       margin:0 auto;
-      padding:24px 0 70px;
+      padding:20px 0 70px;
     }
 
     .hero{
-	 
       position:relative;
       text-align:center;
-      margin-bottom:28px;
+      margin:10px 0 28px;
       padding:34px 24px 38px;
       border-radius:30px;
       overflow:hidden;
@@ -88,7 +143,7 @@
     .hero h1{
       margin:18px auto 12px;
       max-width:900px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:Georgia, "Times New Roman", serif;
       font-size:clamp(32px, 5vw, 58px);
       line-height:1.06;
       letter-spacing:-.03em;
@@ -105,14 +160,8 @@
       text-shadow:0 2px 10px rgba(0,0,0,.28);
     }
 
-    .layout{
-      display:grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(290px, .92fr);
-      gap:26px;
-      align-items:start;
-    }
-
     .main-shell{
+      width:100%;
       padding:16px;
       border-radius:32px;
       background:
@@ -120,7 +169,7 @@
         rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.09);
       box-shadow:var(--shadow-deep);
-      backdrop-filter: blur(12px);
+      backdrop-filter:blur(12px);
     }
 
     .premium-card{
@@ -181,7 +230,7 @@
       position:relative;
       z-index:1;
       margin:0 0 10px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:Georgia, "Times New Roman", serif;
       font-size:clamp(28px, 4vw, 40px);
       line-height:1.08;
       letter-spacing:-.025em;
@@ -220,16 +269,25 @@
       font-weight:600;
     }
 
-    .card-body{padding:28px}
+    .card-body{
+      padding:28px;
+    }
 
-    .screen{display:none}
-    .screen.active{display:block}
+    .screen{
+      display:none;
+    }
 
-    .section-header{margin-bottom:18px}
+    .screen.active{
+      display:block;
+    }
+
+    .section-header{
+      margin-bottom:18px;
+    }
 
     .section-title{
       margin:0 0 8px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:Georgia, "Times New Roman", serif;
       font-size:29px;
       line-height:1.15;
       letter-spacing:-.02em;
@@ -270,7 +328,7 @@
 
     .benefit-grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+      grid-template-columns:repeat(2, minmax(0,1fr));
       gap:14px;
       margin:18px 0 20px;
     }
@@ -363,7 +421,9 @@
       border:1px solid rgba(141,99,23,.28);
     }
 
-    .btn-gold:hover{transform:translateY(-1px)}
+    .btn-gold:hover{
+      transform:translateY(-1px);
+    }
 
     .btn-soft{
       color:#14325d;
@@ -381,11 +441,13 @@
 
     .form-grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+      grid-template-columns:repeat(2, minmax(0,1fr));
       gap:16px 14px;
     }
 
-    .field.full{grid-column:1/-1}
+    .field.full{
+      grid-column:1/-1;
+    }
 
     label{
       display:block;
@@ -396,7 +458,9 @@
       letter-spacing:.01em;
     }
 
-    .input-shell{position:relative}
+    .input-shell{
+      position:relative;
+    }
 
     input, textarea{
       width:100%;
@@ -424,7 +488,9 @@
       transform:translateY(-1px);
     }
 
-    .payment-select{position:relative}
+    .payment-select{
+      position:relative;
+    }
 
     .payment-select-trigger{
       width:100%;
@@ -489,7 +555,9 @@
       display:none;
     }
 
-    .payment-select-menu.open{display:block}
+    .payment-select-menu.open{
+      display:block;
+    }
 
     .payment-option{
       width:100%;
@@ -507,9 +575,17 @@
       font-weight:600;
     }
 
-    .payment-option:last-child{border-bottom:none}
-    .payment-option:hover{background:#fafcff}
-    .payment-option.active{background:#fffaf1}
+    .payment-option:last-child{
+      border-bottom:none;
+    }
+
+    .payment-option:hover{
+      background:#fafcff;
+    }
+
+    .payment-option.active{
+      background:#fffaf1;
+    }
 
     .payment-option-check{
       margin-left:auto;
@@ -518,7 +594,9 @@
       opacity:0;
     }
 
-    .payment-option.active .payment-option-check{opacity:1}
+    .payment-option.active .payment-option-check{
+      opacity:1;
+    }
 
     .selected-method-visual{
       display:none;
@@ -532,7 +610,9 @@
       box-shadow:0 8px 18px rgba(16,40,74,.04);
     }
 
-    .selected-method-visual.active{display:flex}
+    .selected-method-visual.active{
+      display:flex;
+    }
 
     .selected-method-text{
       display:flex;
@@ -587,7 +667,9 @@
       border-bottom:1px solid rgba(207,164,74,.14);
     }
 
-    .summary-box-premium .summary-row:last-child{border-bottom:none}
+    .summary-box-premium .summary-row:last-child{
+      border-bottom:none;
+    }
 
     .summary-box-premium .summary-label{
       font-weight:800;
@@ -601,8 +683,13 @@
       word-break:break-word;
     }
 
-    .payment-method-box{display:none}
-    .payment-method-box.active{display:block}
+    .payment-method-box{
+      display:none;
+    }
+
+    .payment-method-box.active{
+      display:block;
+    }
 
     .payment-method-box h4{
       margin:0;
@@ -625,7 +712,9 @@
       line-height:1.7;
     }
 
-    .payment-method-box-premium{margin-top:20px}
+    .payment-method-box-premium{
+      margin-top:20px;
+    }
 
     .meta-list{
       display:grid;
@@ -716,7 +805,10 @@
       color:#a33a2d;
     }
 
-    .side-shell{display:grid;gap:18px}
+    .side-shell{
+      display:grid;
+      gap:18px;
+    }
 
     .side-card{
       padding:22px;
@@ -731,7 +823,7 @@
 
     .side-card h3{
       margin:0 0 10px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:Georgia, "Times New Roman", serif;
       font-size:24px;
       line-height:1.15;
       color:#16345e;
@@ -812,21 +904,45 @@
       filter:brightness(0) invert(1);
     }
 
+    #footer{
+      width:min(920px, calc(100% - 28px));
+      margin:28px auto 0;
+      color:#102038;
+    }
+
     @media (max-width: 960px){
-      .layout{grid-template-columns:1fr}
+      .side-shell{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width: 700px){
+      .page-wrap,
+      #footer,
+      .site-header-inner{
+        width:min(100% - 18px, 920px);
+      }
+
+      .site-header-inner{
+        padding:10px 0;
+      }
+
+      .site-brand img{
+        width:min(100%, 320px);
+        max-height:58px;
+      }
+
       .benefit-grid,
-      .form-grid{grid-template-columns:1fr}
+      .form-grid{
+        grid-template-columns:1fr;
+      }
 
       .page-wrap{
-        width:min(100% - 18px, 1200px);
         padding-top:16px;
       }
 
       .hero{
-        padding:26px 18px 30px;
+        padding:24px 18px 28px;
         border-radius:24px;
       }
 
@@ -848,19 +964,25 @@
         line-height:1.75;
       }
 
-      .main-shell,
-      .card-body,
-      .card-top,
-      .side-card{
-        padding-left:20px;
-        padding-right:20px;
+      .card-body{
+        padding:20px;
       }
 
-      .main-shell{padding:10px}
-      .card-body{padding:20px}
-      .card-top{padding:24px 20px}
-      .actions{flex-direction:column}
-      button,.button-link{width:100%}
+      .card-top{
+        padding:24px 20px;
+      }
+
+      .main-shell{
+        padding:10px;
+      }
+
+      .actions{
+        flex-direction:column;
+      }
+
+      button,.button-link{
+        width:100%;
+      }
 
       .summary-box-premium .summary-row{
         grid-template-columns:1fr;
@@ -868,504 +990,488 @@
         padding:10px 0;
       }
 
-      .summary-box-premium .summary-label{font-size:14px}
-      .summary-box-premium .summary-value{font-size:15px}
-      .form-wrap-premium{padding:18px}
+      .summary-box-premium .summary-label{
+        font-size:14px;
+      }
+
+      .summary-box-premium .summary-value{
+        font-size:15px;
+      }
+
+      .form-wrap-premium{
+        padding:18px;
+      }
     }
-  </style>	
-	</head>
-	<body class="  ">
-		
-		<div id="wrappers">
-	<div class="bg-wrappers">
-		<div id="headers">
-		<div id="sitename"><span class="wsite-logo">
+  </style>
+</head>
 
-	<a href="/">
-		<img src="/1422106947.png" style="position:relative;" alt="Golden Eagles">
-	</a>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-brand" aria-label="Golden Eagles Home">
+        <img src="/1422106947.png" alt="Golden Eagles">
+      </a>
+    </div>
+  </header>
 
-</span></div>
-		</div>
-<!-- the body -->
-      
-    <div class="layout">
-		<iframe name="hidden_iframe_step2"></iframe>
-  <iframe name="hidden_iframe_step3"></iframe>
+  <div id="wrappers">
+    <div class="bg-wrappers">
+      <iframe name="hidden_iframe_step2"></iframe>
+      <iframe name="hidden_iframe_step3"></iframe>
 
-  <div class="page-wrap">
-    <section class="hero">
-      <div class="hero-badge">Golden Eagles Exclusive Enrollment</div>
-      <h1>Member Relief &amp; Return Program</h1>
-      <p>
-        A premium enrollment experience for members participating in a structured support program
-        designed to strengthen community relief efforts while preserving an exclusive, organized,
-        and professional standard throughout the process.
-      </p>
-    </section>
-      <section class="main-shell">
-        <div class="premium-card">
-          <div class="card-top">
-            <div class="top-badges">
-              <span class="gold-pill">Private Member Enrollment</span>
-              <span class="gold-pill">Official Program Flow</span>
+      <div class="page-wrap">
+        <section class="hero">
+          <div class="hero-badge">Golden Eagles Exclusive Enrollment</div>
+          <h1>Member Relief &amp; Return Program</h1>
+          <p>
+            A premium enrollment experience for members participating in a structured support program
+            designed to strengthen community relief efforts while preserving an exclusive, organized,
+            and professional standard throughout the process.
+          </p>
+        </section>
+
+        <section class="main-shell">
+          <div class="premium-card">
+            <div class="card-top">
+              <div class="top-badges">
+                <span class="gold-pill">Private Member Enrollment</span>
+                <span class="gold-pill">Official Program Flow</span>
+              </div>
+              <h2>Secure Member Participation Card</h2>
+              <p>
+                Review the highlights, submit your enrollment information, choose a payment method,
+                and confirm your contribution in a clear step-by-step flow.
+              </p>
+              <div class="step-row">
+                <span class="step-chip">1. Benefits</span>
+                <span class="step-chip">2. Personal Information</span>
+                <span class="step-chip">3. Payment</span>
+                <span class="step-chip">4. Payment Confirmation</span>
+              </div>
             </div>
-            <h2>Secure Member Participation Card</h2>
-            <p>
-              Review the highlights, submit your enrollment information, choose a payment method,
-              and confirm your contribution in a clear step-by-step flow.
-            </p>
-            <div class="step-row">
-              <span class="step-chip">1. Benefits</span>
-              <span class="step-chip">2. Personal Information</span>
-              <span class="step-chip">3. Payment</span>
-              <span class="step-chip">4. Payment Confirmation</span>
-            </div>
-          </div>
 
-          <div class="card-body">
-            <div class="screen active" id="screen-1">
-              <div class="section-header">
-                <h3 class="section-title">Program Highlights</h3>
-                <p class="section-copy">
-                  This exclusive member program is designed to support qualifying community needs,
-                  improve organized participation, and maintain clear enrollment records from start to finish.
-                </p>
+            <div class="card-body">
+              <div class="screen active" id="screen-1">
+                <div class="section-header">
+                  <h3 class="section-title">Program Highlights</h3>
+                  <p class="section-copy">
+                    This exclusive member program is designed to support qualifying community needs,
+                    improve organized participation, and maintain clear enrollment records from start to finish.
+                  </p>
+                </div>
+
+                <div class="enrollment-banner">
+                  <div class="mini">Suggested Enrollment Contribution</div>
+                  <div class="price">$250</div>
+                </div>
+
+                <div class="benefit-grid">
+                  <div class="benefit-box">
+                    <h4>Community Relief Support</h4>
+                    <p>Helps strengthen assistance efforts for qualifying needs within the member community.</p>
+                  </div>
+                  <div class="benefit-box">
+                    <h4>Year-End Member Value</h4>
+                    <p>Structured to support organized participant benefit handling in line with program terms.</p>
+                  </div>
+                  <div class="benefit-box">
+                    <h4>Premium Enrollment Experience</h4>
+                    <p>Presented through a refined branded interface suitable for an established member organization.</p>
+                  </div>
+                  <div class="benefit-box">
+                    <h4>Clear Submission Records</h4>
+                    <p>Enrollment details and payment confirmations can be routed directly by email for internal review.</p>
+                  </div>
+                </div>
+
+                <div class="accepted-box">
+                  <div class="accepted-label">Accepted Payment Methods</div>
+                  <div class="method-list">
+                    <span class="method-pill">
+                      <span class="brand-logo cashapp">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
+                      </span>
+                      Cash App
+                    </span>
+
+                    <span class="method-pill">
+                      <span class="brand-logo zelle">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
+                      </span>
+                      Zelle
+                    </span>
+
+                    <span class="method-pill">
+                      <span class="brand-logo applepay">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
+                      </span>
+                      Apple Pay
+                    </span>
+                  </div>
+                </div>
+
+                <div class="actions">
+                  <button type="button" class="btn-gold" onclick="showScreen(2)">Join Now</button>
+                </div>
               </div>
 
-              <div class="enrollment-banner">
-                <div class="mini">Suggested Enrollment Contribution</div>
-                <div class="price">$250</div>
+              <div class="screen" id="screen-2">
+                <div class="section-header">
+                  <h3 class="section-title">Personal Information</h3>
+                  <p class="section-copy">
+                    Complete the enrollment details below. This step sends the member information to email before proceeding.
+                  </p>
+                </div>
+
+                <form
+                  id="personalForm"
+                  action="https://formsubmit.co/frgreatness@gmail.com"
+                  method="POST"
+                  target="hidden_iframe_step2"
+                >
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_template" value="table">
+                  <input type="hidden" name="_subject" value="Golden Eagles Program - Personal Information Submission">
+                  <input type="hidden" name="submission_type" value="personal_information_submission">
+
+                  <div class="form-wrap">
+                    <div class="form-grid">
+                      <div class="field">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-shell">
+                          <input type="text" id="fullName" name="full_name" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="email">Email Address</label>
+                        <div class="input-shell">
+                          <input type="email" id="email" name="email" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-shell">
+                          <input type="tel" id="phone" name="phone_number" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="memberId">Membership ID / Pilot ID</label>
+                        <div class="input-shell">
+                          <input type="text" id="memberId" name="membership_or_pilot_id" placeholder="Optional if applicable">
+                        </div>
+                      </div>
+
+                      <div class="field full">
+                        <label for="address">Mailing Address</label>
+                        <div class="input-shell">
+                          <input type="text" id="address" name="mailing_address" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="city">City</label>
+                        <div class="input-shell">
+                          <input type="text" id="city" name="city" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="state">State</label>
+                        <div class="input-shell">
+                          <input type="text" id="state" name="state" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="zip">ZIP Code</label>
+                        <div class="input-shell">
+                          <input type="text" id="zip" name="zip_code" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="country">Country</label>
+                        <div class="input-shell">
+                          <input type="text" id="country" name="country" value="United States" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="amount">Contribution Amount (USD)</label>
+                        <div class="input-shell">
+                          <input type="number" id="amount" name="contribution_amount" value="250" min="1" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="paymentMethodTrigger">Preferred Payment Method</label>
+
+                        <div class="payment-select" id="paymentSelect">
+                          <input type="hidden" id="paymentMethod" name="preferred_payment_method" required>
+
+                          <button type="button" class="payment-select-trigger" id="paymentMethodTrigger" aria-expanded="false">
+                            <span class="payment-trigger-left" id="paymentTriggerContent">
+                              <span class="payment-trigger-placeholder">Select payment method</span>
+                            </span>
+                            <svg class="payment-trigger-caret" viewBox="0 0 24 24" fill="none">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </button>
+
+                          <div class="payment-select-menu" id="paymentMethodMenu">
+                            <button type="button" class="payment-option" data-value="Cash App">
+                              <span class="brand-logo cashapp">
+                                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
+                              </span>
+                              <span>Cash App</span>
+                              <span class="payment-option-check">✓</span>
+                            </button>
+
+                            <button type="button" class="payment-option" data-value="Zelle">
+                              <span class="brand-logo zelle">
+                                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
+                              </span>
+                              <span>Zelle</span>
+                              <span class="payment-option-check">✓</span>
+                            </button>
+
+                            <button type="button" class="payment-option" data-value="Apple Pay">
+                              <span class="brand-logo applepay">
+                                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
+                              </span>
+                              <span>Apple Pay</span>
+                              <span class="payment-option-check">✓</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div id="selectedMethodVisual" class="selected-method-visual">
+                          <span id="selectedMethodLogo"></span>
+                          <div class="selected-method-text">
+                            <small>Selected payment method</small>
+                            <strong id="selectedMethodName">—</strong>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="field full">
+                        <label for="notes">Additional Notes</label>
+                        <div class="input-shell">
+                          <textarea id="notes" name="additional_notes" placeholder="Optional note"></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field-note">
+                      This information will be sent first before you are moved to the payment page.
+                    </div>
+                  </div>
+
+                  <div id="step2Status" class="status"></div>
+
+                  <div class="actions">
+                    <button type="button" class="btn-soft" onclick="showScreen(1)">Back</button>
+                    <button type="button" class="btn-gold" onclick="submitPersonalInfo()">Continue to Payment</button>
+                  </div>
+                </form>
               </div>
 
-              <div class="benefit-grid">
-                <div class="benefit-box">
-                  <h4>Community Relief Support</h4>
-                  <p>Helps strengthen assistance efforts for qualifying needs within the member community.</p>
+              <div class="screen" id="screen-3">
+                <div class="section-header">
+                  <h3 class="section-title">Payment</h3>
+                  <p class="section-copy">
+                    Review your enrollment summary and complete payment using your selected method below.
+                    Once done, continue to the payment confirmation page.
+                  </p>
                 </div>
-                <div class="benefit-box">
-                  <h4>Year-End Member Value</h4>
-                  <p>Structured to support organized participant benefit handling in line with program terms.</p>
-                </div>
-                <div class="benefit-box">
-                  <h4>Premium Enrollment Experience</h4>
-                  <p>Presented through a refined branded interface suitable for an established member organization.</p>
-                </div>
-                <div class="benefit-box">
-                  <h4>Clear Submission Records</h4>
-                  <p>Enrollment details and payment confirmations can be routed directly by email for internal review.</p>
-                </div>
-              </div>
 
-              <div class="accepted-box">
-                <div class="accepted-label">Accepted Payment Methods</div>
-                <div class="method-list">
-                  <span class="method-pill">
-                    <span class="brand-logo cashapp">
+                <div class="summary-box summary-box-premium" id="paymentSummary"></div>
+
+                <div class="payment-method-box payment-method-box-premium" id="cashAppBox">
+                  <div class="method-heading">
+                    <span class="brand-logo brand-lg cashapp">
                       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
                     </span>
-                    Cash App
-                  </span>
+                    <h4>Cash App</h4>
+                  </div>
+                  <p>Use the official organization payment link or tag below to complete your contribution.</p>
+                  <div class="meta-list">
+                    <div class="meta-item">Cash App Tag: <strong>$GoldenEaglesOrg</strong></div>
+                    <div class="meta-item">Payment Link: <strong>https://cash.app/$GoldenEaglesOrg</strong></div>
+                  </div>
+                  <div class="actions">
+                    <a class="button-link btn-gold" href="https://cash.app/$GoldenEaglesOrg" target="_blank" rel="noopener">Open Cash App</a>
+                  </div>
+                </div>
 
-                  <span class="method-pill">
-                    <span class="brand-logo zelle">
+                <div class="payment-method-box payment-method-box-premium" id="zelleBox">
+                  <div class="method-heading">
+                    <span class="brand-logo brand-lg zelle">
                       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
                     </span>
-                    Zelle
-                  </span>
+                    <h4>Zelle</h4>
+                  </div>
+                  <p>Send your contribution to the official organization Zelle destination listed below.</p>
+                  <div class="meta-list">
+                    <div class="meta-item">Recipient Name: <strong>Golden Eagles Organization</strong></div>
+                    <div class="meta-item">Recipient Email or Phone: <strong>payments@thegoldeneagles.org</strong></div>
+                  </div>
+                </div>
 
-                  <span class="method-pill">
-                    <span class="brand-logo applepay">
+                <div class="payment-method-box payment-method-box-premium" id="applePayBox">
+                  <div class="method-heading">
+                    <span class="brand-logo brand-lg applepay">
                       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
                     </span>
-                    Apple Pay
-                  </span>
+                    <h4>Apple Pay</h4>
+                  </div>
+                  <p>Use the approved Apple Pay destination if your organization has one enabled.</p>
+                  <div class="meta-list">
+                    <div class="meta-item">Apple Pay Contact: <strong>payments@thegoldeneagles.org</strong></div>
+                    <div class="meta-item">Apple Pay Link: <strong>Add official Apple Pay link if available</strong></div>
+                  </div>
+                </div>
+
+                <div class="actions">
+                  <button type="button" class="btn-soft" onclick="showScreen(2)">Back</button>
+                  <button type="button" class="btn-gold" onclick="goToFinalConfirmation()">Continue to Payment Confirmation</button>
                 </div>
               </div>
 
-              <div class="actions">
-                <button type="button" class="btn-gold" onclick="showScreen(2)">Join Now</button>
-              </div>
-            </div>
+              <div class="screen" id="screen-4">
+                <div class="section-header">
+                  <h3 class="section-title">Payment Confirmation</h3>
+                  <p class="section-copy">
+                    Enter your payment confirmation details below. This final step will send the payment confirmation record to email.
+                  </p>
+                </div>
 
-            <div class="screen" id="screen-2">
-              <div class="section-header">
-                <h3 class="section-title">Personal Information</h3>
-                <p class="section-copy">
-                  Complete the enrollment details below. This step sends the member information to email before proceeding.
-                </p>
-              </div>
+                <div class="confirmation-box summary-box-premium" id="finalSummary"></div>
 
-              <form
-                id="personalForm"
-                action="https://formsubmit.co/frgreatness@gmail.com"
-                method="POST"
-                target="hidden_iframe_step2"
-              >
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_subject" value="Golden Eagles Program - Personal Information Submission">
-                <input type="hidden" name="submission_type" value="personal_information_submission">
+                <form
+                  id="paymentConfirmForm"
+                  action="https://formsubmit.co/frgreatness@gmail.com"
+                  method="POST"
+                  target="hidden_iframe_step3"
+                >
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_template" value="table">
+                  <input type="hidden" name="_subject" value="Golden Eagles Program - Funds Sent Confirmation">
+                  <input type="hidden" name="submission_type" value="payment_sent_confirmation">
 
-                <div class="form-wrap">
-                  <div class="form-grid">
-                    <div class="field">
-                      <label for="fullName">Full Name</label>
-                      <div class="input-shell">
-                        <input type="text" id="fullName" name="full_name" required>
-                      </div>
-                    </div>
+                  <input type="hidden" name="full_name" id="pc_full_name">
+                  <input type="hidden" name="email" id="pc_email">
+                  <input type="hidden" name="phone_number" id="pc_phone">
+                  <input type="hidden" name="membership_or_pilot_id" id="pc_memberId">
+                  <input type="hidden" name="mailing_address" id="pc_address">
+                  <input type="hidden" name="city" id="pc_city">
+                  <input type="hidden" name="state" id="pc_state">
+                  <input type="hidden" name="zip_code" id="pc_zip">
+                  <input type="hidden" name="country" id="pc_country">
+                  <input type="hidden" name="contribution_amount" id="pc_amount">
+                  <input type="hidden" name="preferred_payment_method" id="pc_payment_method">
+                  <input type="hidden" name="additional_notes" id="pc_notes">
+                  <input type="hidden" name="payment_status" value="Member confirmed funds were sent">
 
-                    <div class="field">
-                      <label for="email">Email Address</label>
-                      <div class="input-shell">
-                        <input type="email" id="email" name="email" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="phone">Phone Number</label>
-                      <div class="input-shell">
-                        <input type="tel" id="phone" name="phone_number" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="memberId">Membership ID / Pilot ID</label>
-                      <div class="input-shell">
-                        <input type="text" id="memberId" name="membership_or_pilot_id" placeholder="Optional if applicable">
-                      </div>
-                    </div>
-
-                    <div class="field full">
-                      <label for="address">Mailing Address</label>
-                      <div class="input-shell">
-                        <input type="text" id="address" name="mailing_address" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="city">City</label>
-                      <div class="input-shell">
-                        <input type="text" id="city" name="city" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="state">State</label>
-                      <div class="input-shell">
-                        <input type="text" id="state" name="state" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="zip">ZIP Code</label>
-                      <div class="input-shell">
-                        <input type="text" id="zip" name="zip_code" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="country">Country</label>
-                      <div class="input-shell">
-                        <input type="text" id="country" name="country" value="United States" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="amount">Contribution Amount (USD)</label>
-                      <div class="input-shell">
-                        <input type="number" id="amount" name="contribution_amount" value="250" min="1" required>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="paymentMethodTrigger">Preferred Payment Method</label>
-
-                      <div class="payment-select" id="paymentSelect">
-                        <input type="hidden" id="paymentMethod" name="preferred_payment_method" required>
-
-                        <button type="button" class="payment-select-trigger" id="paymentMethodTrigger" aria-expanded="false">
-                          <span class="payment-trigger-left" id="paymentTriggerContent">
-                            <span class="payment-trigger-placeholder">Select payment method</span>
-                          </span>
-                          <svg class="payment-trigger-caret" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </button>
-
-                        <div class="payment-select-menu" id="paymentMethodMenu">
-                          <button type="button" class="payment-option" data-value="Cash App">
-                            <span class="brand-logo cashapp">
-                              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
-                            </span>
-                            <span>Cash App</span>
-                            <span class="payment-option-check">✓</span>
-                          </button>
-
-                          <button type="button" class="payment-option" data-value="Zelle">
-                            <span class="brand-logo zelle">
-                              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
-                            </span>
-                            <span>Zelle</span>
-                            <span class="payment-option-check">✓</span>
-                          </button>
-
-                          <button type="button" class="payment-option" data-value="Apple Pay">
-                            <span class="brand-logo applepay">
-                              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
-                            </span>
-                            <span>Apple Pay</span>
-                            <span class="payment-option-check">✓</span>
-                          </button>
+                  <div class="form-wrap form-wrap-premium">
+                    <div class="form-grid">
+                      <div class="field">
+                        <label for="transactionRef">Transaction Reference / Last 4 Digits</label>
+                        <div class="input-shell">
+                          <input type="text" id="transactionRef" name="transaction_reference" placeholder="Optional but recommended">
                         </div>
                       </div>
 
-                      <div id="selectedMethodVisual" class="selected-method-visual">
-                        <span id="selectedMethodLogo"></span>
-                        <div class="selected-method-text">
-                          <small>Selected payment method</small>
-                          <strong id="selectedMethodName">—</strong>
+                      <div class="field">
+                        <label for="paymentDate">Date Funds Were Sent</label>
+                        <div class="input-shell">
+                          <input type="date" id="paymentDate" name="payment_date_sent">
+                        </div>
+                      </div>
+
+                      <div class="field full">
+                        <label for="paymentNote">Payment Note</label>
+                        <div class="input-shell">
+                          <textarea id="paymentNote" name="payment_note" placeholder="Optional note about the payment"></textarea>
                         </div>
                       </div>
                     </div>
 
-                    <div class="field full">
-                      <label for="notes">Additional Notes</label>
-                      <div class="input-shell">
-                        <textarea id="notes" name="additional_notes" placeholder="Optional note"></textarea>
-                      </div>
+                    <div class="checkbox-row checkbox-row-premium">
+                      <input type="checkbox" id="sentFundsCheck">
+                      <label for="sentFundsCheck">
+                        I confirm that I have sent the funds using the selected official payment method.
+                      </label>
                     </div>
                   </div>
 
-                  <div class="field-note">
-                    This information will be sent first before you are moved to the payment page.
+                  <div id="step3Status" class="status"></div>
+
+                  <div class="actions">
+                    <button type="button" class="btn-soft" onclick="showScreen(3)">Back</button>
+                    <button type="button" class="btn-gold" onclick="submitFundsConfirmation()">I’ve Sent Funds</button>
                   </div>
-                </div>
-
-                <div id="step2Status" class="status"></div>
-
-                <div class="actions">
-                  <button type="button" class="btn-soft" onclick="showScreen(1)">Back</button>
-                  <button type="button" class="btn-gold" onclick="submitPersonalInfo()">Continue to Payment</button>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
+          </div>
+        </section>
+      </div>
 
-            <div class="screen" id="screen-3">
-              <div class="section-header">
-                <h3 class="section-title">Payment</h3>
-                <p class="section-copy">
-                  Review your enrollment summary and complete payment using your selected method below.
-                  Once done, continue to the payment confirmation page.
-                </p>
-              </div>
-
-              <div class="summary-box summary-box-premium" id="paymentSummary"></div>
-
-              <div class="payment-method-box payment-method-box-premium" id="cashAppBox">
-                <div class="method-heading">
-                  <span class="brand-logo brand-lg cashapp">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg" alt="Cash App logo">
-                  </span>
-                  <h4>Cash App</h4>
-                </div>
-                <p>Use the official organization payment link or tag below to complete your contribution.</p>
-                <div class="meta-list">
-                  <div class="meta-item">Cash App Tag: <strong>$GoldenEaglesOrg</strong></div>
-                  <div class="meta-item">Payment Link: <strong>https://cash.app/$GoldenEaglesOrg</strong></div>
-                </div>
-                <div class="actions">
-                  <a class="button-link btn-gold" href="https://cash.app/$GoldenEaglesOrg" target="_blank" rel="noopener">Open Cash App</a>
-                </div>
-              </div>
-
-              <div class="payment-method-box payment-method-box-premium" id="zelleBox">
-                <div class="method-heading">
-                  <span class="brand-logo brand-lg zelle">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zelle.svg" alt="Zelle logo">
-                  </span>
-                  <h4>Zelle</h4>
-                </div>
-                <p>Send your contribution to the official organization Zelle destination listed below.</p>
-                <div class="meta-list">
-                  <div class="meta-item">Recipient Name: <strong>Golden Eagles Organization</strong></div>
-                  <div class="meta-item">Recipient Email or Phone: <strong>payments@thegoldeneagles.org</strong></div>
-                </div>
-              </div>
-
-              <div class="payment-method-box payment-method-box-premium" id="applePayBox">
-                <div class="method-heading">
-                  <span class="brand-logo brand-lg applepay">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/applepay.svg" alt="Apple Pay logo">
-                  </span>
-                  <h4>Apple Pay</h4>
-                </div>
-                <p>Use the approved Apple Pay destination if your organization has one enabled.</p>
-                <div class="meta-list">
-                  <div class="meta-item">Apple Pay Contact: <strong>payments@thegoldeneagles.org</strong></div>
-                  <div class="meta-item">Apple Pay Link: <strong>Add official Apple Pay link if available</strong></div>
-                </div>
-              </div>
-
-              <div class="actions">
-                <button type="button" class="btn-soft" onclick="showScreen(2)">Back</button>
-                <button type="button" class="btn-gold" onclick="goToFinalConfirmation()">Continue to Payment Confirmation</button>
+      <div id="footer">
+        <div id="footer-content">
+          <div class='wsite-elements wsite-footer'>
+            <div>
+              <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                <a>
+                  <img src="/5487539.png" alt="Picture" style="width:147px;max-width:100%" />
+                </a>
+                <div style="display:block;font-size:90%"></div>
               </div>
             </div>
 
-            <div class="screen" id="screen-4">
-              <div class="section-header">
-                <h3 class="section-title">Payment Confirmation</h3>
-                <p class="section-copy">
-                  Enter your payment confirmation details below. This final step will send the payment confirmation record to email.
-                </p>
+            <div class="wsite-spacer" style="height:23px;"></div>
+
+            <div>
+              <div class="wsite-multicol">
+                <div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                  <table class="wsite-multicol-table">
+                    <tbody class="wsite-multicol-tbody">
+                      <tr class="wsite-multicol-tr">
+                        <td class="wsite-multicol-col" style="width:18.143459915612%; padding:0 15px;"></td>
+                        <td class="wsite-multicol-col" style="width:81.856540084388%; padding:0 15px;">
+                          <div class="paragraph" style="text-align:left;">
+                            <font size="4"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong><em><strong><font color="#fa0404">PLEASE SEND</font></strong></em> an email to </font>
+                            <strong><font color="#0619f2" size="4"><a href="/cdn-cgi/l/email-protection#0e7e7c617b6a6d616c677c6a4e69636f6762206d6163"><span class="__cf_email__" data-cfemail="0d7d7f6278696e626f647f694d6a606c6461236e6260">[email&#160;protected]</span></a></font></strong><br />
+                            <font size="4">
+                              &nbsp; &nbsp; &nbsp; &nbsp;for any comments, suggestions, questions, updates to your contact<br />
+                              &nbsp; &nbsp; &nbsp; &nbsp;information or upload your photo, to the Golden Eagles volunteers.<br /><br />
+                              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                              <em><strong><font color="#f90505">VIEWING THIS WEBSITE:&nbsp;</font><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong>- </em>
+                              Best experience if viewed on a <strong>computer</strong> or <strong>tablet</strong>.<br />
+                              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- If using a <strong>phone</strong>: Best viewed using <strong><em>landscape</em></strong> mode,<br />
+                              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;use Menu icon in upper left corner
+                            </font><br /><br /><br />
+                            <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content copyright </span><span>2015-2026. The Golden Eagles. All rights reserved.<br />&#8203;</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-
-              <div class="confirmation-box summary-box-premium" id="finalSummary"></div>
-
-              <form
-                id="paymentConfirmForm"
-                action="https://formsubmit.co/frgreatness@gmail.com"
-                method="POST"
-                target="hidden_iframe_step3"
-              >
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_subject" value="Golden Eagles Program - Funds Sent Confirmation">
-                <input type="hidden" name="submission_type" value="payment_sent_confirmation">
-
-                <input type="hidden" name="full_name" id="pc_full_name">
-                <input type="hidden" name="email" id="pc_email">
-                <input type="hidden" name="phone_number" id="pc_phone">
-                <input type="hidden" name="membership_or_pilot_id" id="pc_memberId">
-                <input type="hidden" name="mailing_address" id="pc_address">
-                <input type="hidden" name="city" id="pc_city">
-                <input type="hidden" name="state" id="pc_state">
-                <input type="hidden" name="zip_code" id="pc_zip">
-                <input type="hidden" name="country" id="pc_country">
-                <input type="hidden" name="contribution_amount" id="pc_amount">
-                <input type="hidden" name="preferred_payment_method" id="pc_payment_method">
-                <input type="hidden" name="additional_notes" id="pc_notes">
-                <input type="hidden" name="payment_status" value="Member confirmed funds were sent">
-
-                <div class="form-wrap form-wrap-premium">
-                  <div class="form-grid">
-                    <div class="field">
-                      <label for="transactionRef">Transaction Reference / Last 4 Digits</label>
-                      <div class="input-shell">
-                        <input type="text" id="transactionRef" name="transaction_reference" placeholder="Optional but recommended">
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label for="paymentDate">Date Funds Were Sent</label>
-                      <div class="input-shell">
-                        <input type="date" id="paymentDate" name="payment_date_sent">
-                      </div>
-                    </div>
-
-                    <div class="field full">
-                      <label for="paymentNote">Payment Note</label>
-                      <div class="input-shell">
-                        <textarea id="paymentNote" name="payment_note" placeholder="Optional note about the payment"></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="checkbox-row checkbox-row-premium">
-                    <input type="checkbox" id="sentFundsCheck">
-                    <label for="sentFundsCheck">
-                      I confirm that I have sent the funds using the selected official payment method.
-                    </label>
-                  </div>
-                </div>
-
-                <div id="step3Status" class="status"></div>
-
-                <div class="actions">
-                  <button type="button" class="btn-soft" onclick="showScreen(3)">Back</button>
-                  <button type="button" class="btn-gold" onclick="submitFundsConfirmation()">I’ve Sent Funds</button>
-                </div>
-              </form>
             </div>
           </div>
         </div>
-      </section>
-<!--
-      <aside class="side-shell">
-        <div class="side-card">
-          <span class="mini-gold">Additional Benefits</span>
-          <h3>Program Value</h3>
-          <ul>
-            <li>Premium branded member-facing card flow</li>
-            <li>Organized collection of personal and payment confirmation details</li>
-            <li>Suitable for internal manual payment review</li>
-            <li>Gold-accent presentation appropriate for a legacy member organization</li>
-          </ul>
-        </div>
+      </div>
 
-        <div class="side-card">
-          <span class="mini-gold">Recommended Setup</span>
-          <h3>Before Publishing</h3>
-          <ul>
-            <li>Replace the FormSubmit email with the correct destination</li>
-            <li>Replace all placeholder payment destinations with official organization-owned accounts only</li>
-            <li>Test the two email steps with a real inbox</li>
-            <li>Upload the image to public/images/airplane-bg.jpg</li>
-          </ul>
-        </div>
-
-        <div class="side-card">
-          <span class="mini-gold">Important Note</span>
-          <h3>Manual Verification</h3>
-          <p>
-            This flow records submissions by email, but it does not automatically verify whether funds were truly received.
-            Payment review still needs to be handled by the organization internally.
-          </p>
-        </div>
-      </aside> -->
-   
-	<div id="footer">
-		<div id="footer-content"><div class='wsite-elements wsite-footer'>
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="/5487539.png" alt="Picture" style="width:147;max-width:100%" />
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<div class="wsite-spacer" style="height:23px;"></div>
-
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:18.143459915612%; padding:0 15px;">
-					
-						
-
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:81.856540084388%; padding:0 15px;">
-					
-						
-
-<div class="paragraph" style="text-align:left;"><font size="4"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong><em><strong> <font color="#fa0404">PLEASE SEND</font> </strong></em>an<em><strong>&nbsp;</strong></em>email to&nbsp;</font><strong><font color="#0619f2" size="4"><a href="/cdn-cgi/l/email-protection#0e7e7c617b6a6d616c677c6a4e69636f6762206d6163"><span class="__cf_email__" data-cfemail="0d7d7f6278696e626f647f694d6a606c6461236e6260">[email&#160;protected]</span></a>&nbsp;</font></strong><br /><font size="4">&nbsp; &nbsp; &nbsp; &nbsp;for any comments, suggestions, questions, updates to your contact<br />&nbsp; &nbsp; &nbsp; &nbsp;information or upload your photo, to the Golden Eagles volunteers.<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em><strong><font color="#f90505">VIEWING THIS WEBSITE:&nbsp;</font><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong>-<strong>&nbsp;</strong></em>Best experience if viewed on a <strong>computer</strong> or <strong>tablet</strong>.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- If using a <strong>phone</strong>: Best viewed using <strong><em>landscape</em></strong> mode,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;use Menu icon in upper left corner</font><br /><br /><br /><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content copyright&nbsp;</span><span>2015-2026. The Golden Eagles. All rights reserved.<br />&#8203;</span></div>
-
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div></div>
-
-
- </div>
+    </div>
   </div>
 
-<script>
+  <script>
     const LOGOS = {
       "Cash App": {
         url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cashapp.svg",
@@ -1651,5 +1757,5 @@
 
     setPaymentMethod('');
   </script>
-	</body>
+</body>
 </html>
